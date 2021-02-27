@@ -7,7 +7,6 @@
         }
     ],
     "require": {
-        "phpunit/phpunit": "7.2.0",
         "gi-framework/gi-framework": "*.*"
     },
     "minimum-stability": "dev",
