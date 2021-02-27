@@ -73,6 +73,7 @@ class Widget extends AbstractWidget implements WidgetInterface
      * @render
      * @gi-id container
      * @return LayoutInterface
+     * @throws \Exception
      */
     protected function createContainer()
     {
@@ -84,6 +85,7 @@ class Widget extends AbstractWidget implements WidgetInterface
     /**
      * @gi-id progress-bar
      * @return ProgressInterface
+     * @throws \Exception
      */
     protected function createProgressBar()
     {

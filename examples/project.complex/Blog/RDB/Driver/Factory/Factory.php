@@ -31,8 +31,6 @@ class Factory extends Base implements FactoryInterface
     {
         parent::__construct();
 
-        $this->setPrefixToGet()
-            ->setCached(true)
-            ->setNamed('Main', MainDriver::class);
+        $this->setNamed('Main', MainDriver::class);
     }
 }
