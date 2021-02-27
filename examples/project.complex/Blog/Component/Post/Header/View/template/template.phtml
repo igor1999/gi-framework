@@ -1,0 +1,26 @@
+<?php
+    /** @noinspection PhpUnhandledExceptionInspection */
+
+    use Blog\Component\Post\Header\View\ViewInterface;
+    /** @var ViewInterface $this */
+
+    echo $this->getResourceRenderer()->toString();
+?>
+
+<p data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>" data-gi-id="title">
+    <?php
+        echo $this->getEscaperContainer()->getHTMLText()->escape($this->getPost()->getTitle());
+    ?>
+</p>
+<p data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>" data-gi-id="author-time">
+    <?php
+        echo $this->translate('Posted by'), ' ';
+        $userID = $this->getPost()->getAuthorID();
+    ?>
+    <a href="<?php echo $this->blogGetRouteTree()->getUserTree()->getStatisticTree()->buildSingleWithId($userID); ?>">
+        <?php echo $this->getPost()->getUser()->getLogin(); ?>
+    </a>
+    <?php
+        echo ' ', $this->translate('at'), ' ', $this->getPost()->getCreateAtAsDateTime()->format('Y-m-d H:i');
+    ?>
+</p>

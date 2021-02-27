@@ -1,0 +1,8 @@
+
+div[data-gi-css~=blog-user-statistic-single][data-gi-id=title] {
+    font-size: 12px;
+}
+
+div[data-gi-css~=blog-user-statistic-single][data-gi-id=calendar] {
+    margin-top: 30px;
+}

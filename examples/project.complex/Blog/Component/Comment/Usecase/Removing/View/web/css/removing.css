@@ -1,0 +1,12 @@
+
+div[data-gi-css~=blog-comment-usecase-removing][data-gi-id=post] {
+    padding-bottom: 15px; border-bottom: 1px inset black;
+}
+
+div[data-gi-css~=blog-comment-usecase-removing][data-gi-id=comment-detail] {
+    padding-bottom: 15px; border-bottom: 1px inset black;
+}
+
+div[data-gi-css~=blog-comment-usecase-removing][data-gi-id=delete] {
+    padding-top: 15px;
+}

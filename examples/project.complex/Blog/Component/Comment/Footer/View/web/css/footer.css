@@ -1,0 +1,8 @@
+
+div[data-gi-css~=blog-comment-footer][data-gi-id=navi-holder] {
+    padding: 10px 0 0 0;
+}
+
+div[data-gi-css~=blog-comment-footer][data-gi-id=remove-holder] {}
+
+a[data-gi-css~=blog-comment-footer][data-gi-id=navi-link] {}

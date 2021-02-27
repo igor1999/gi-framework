@@ -1,0 +1,22 @@
+<?php
+    /** @noinspection PhpUnhandledExceptionInspection */
+
+    use Blog\Component\Comment\Header\View\ViewInterface;
+    /** @var ViewInterface $this */
+
+    echo $this->getResourceRenderer()->toString();
+?>
+
+<p data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>" data-gi-id="author-time">
+    <?php
+        echo $this->translate('Posted by'), ' ';
+        $userID = $this->getComment()->getAuthorID();
+    ?>
+    <a href="<?php echo $this->blogGetRouteTree()->getUserTree()->getStatisticTree()->buildSingleWithId($userID); ?>">
+        <?php echo $this->getComment()->getUser()->getLogin(); ?>
+    </a>
+    <?php
+        echo ' ', $this->translate('at'), ' ';
+        echo $this->getComment()->getCreateAtAsDateTime()->format('Y-m-d H:i');
+    ?>
+</p>

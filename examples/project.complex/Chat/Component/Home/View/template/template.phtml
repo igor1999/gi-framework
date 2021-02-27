@@ -1,0 +1,16 @@
+<?php
+    /** @noinspection PhpUnhandledExceptionInspection */
+
+    use Chat\Component\Home\View\ViewInterface;
+    /** @var ViewInterface $this */
+
+    echo $this->getResourceRenderer()->toString();
+?>
+
+<div data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>" data-gi-id="prompt">
+    <?php if ($this->isAuth()): ?>
+        <a href="<?php echo $this->chatGetRouteTree()->getConversation()->build(); ?>">To chat</a>
+    <?php else: ?>
+        Welcome to the chat. Please sign in.
+    <?php endif ?>
+</div>

@@ -1,0 +1,47 @@
+<?php
+    /** @noinspection PhpUnhandledExceptionInspection */
+
+    use STA\Component\Layout\View\ViewInterface;
+    /** @var ViewInterface $this */
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title><?php echo $this->getTitle(); ?></title>
+
+    <?php
+        echo $this->getResourceRenderer()->toString();
+    ?>
+</head>
+
+<body>
+    <div data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>" data-gi-id="wrapper">
+        <div data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>" data-gi-id="margin" class="cell">
+            &nbsp;
+        </div>
+        <div data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>" data-gi-id="center" class="cell">
+            <a data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>" data-gi-id="title" href="/">
+                <div data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>" data-gi-id="title" class="great">
+                    <?php
+                        $description = $this->translate('Switchers, Tabs, Accordions for PHP library');
+                    ?>
+                    <?php echo $description; ?> <span class="great bold">GI</span>
+                </div>
+            </a>
+            <div data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>" data-gi-id="navigation">
+                <?php echo $this->getNaviMenu()->toString(); ?>
+            </div>
+            <div data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>" data-gi-id="content">
+                <?php echo $this->getContent()->toString(); ?>
+            </div>
+        </div>
+        <div data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>" data-gi-id="margin" class="cell">
+            &nbsp;
+        </div>
+        <div class="clear"></div>
+    </div>
+</body>
+
+</html>

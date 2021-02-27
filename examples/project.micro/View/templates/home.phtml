@@ -1,0 +1,51 @@
+<?php
+    use View\ViewInterface;
+    /** @var ViewInterface $this */
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>GI micro project</title>
+
+    <!--suppress HtmlUnknownTarget -->
+    <link type="text/css" rel="stylesheet" href="/css/default.css" />
+    <!--suppress HtmlUnknownTarget -->
+    <link type="text/css" rel="stylesheet" href="/css/layout.css" />
+
+    <!--suppress HtmlUnknownTarget -->
+    <script type="text/javascript" src="/js/lib/jquery.js"></script>
+    <!--suppress HtmlUnknownTarget -->
+    <script type="text/javascript" src="/js/home.js"></script>
+</head>
+
+<body>
+<div class="wrapper">
+    <div class="cell margin">&nbsp;</div>
+    <div class="cell center">
+        <div class="title great">
+            Example micro project for PHP library <span class="great bold">GI</span>
+        </div>
+        <div class="content">
+            <div>
+                <form id="word-form">
+                    <input id="word" placeholder="enter the word" />
+                    <select id="encoding" title="">
+                        <option value="sha1">SHA1</option>
+                        <option value="md5">MD5</option>
+                    </select>
+                    <input id="send-button" type="submit" value="Encode!" disabled="" />
+                </form>
+            </div>
+            <div>
+                <p id="response"></p>
+            </div>
+        </div>
+    </div>
+    <div class="cell margin">&nbsp;</div>
+    <div class="clear"></div>
+</div>
+</body>
+
+</html>

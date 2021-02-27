@@ -1,0 +1,12 @@
+
+div[data-gi-css~=blog-post-footer][data-gi-id=comments-count] {}
+
+div[data-gi-css~=blog-post-footer][data-gi-id=navi-holder] {}
+
+div[data-gi-css~=blog-post-footer][data-gi-id=edit-holder] {
+    padding: 0 20px 0 0;
+}
+
+div[data-gi-css~=blog-post-footer][data-gi-id=add-comment-holder] {}
+
+a[data-gi-css~=blog-post-footer][data-gi-id=navi-link] {}

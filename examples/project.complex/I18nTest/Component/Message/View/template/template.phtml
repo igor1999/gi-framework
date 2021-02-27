@@ -1,0 +1,12 @@
+<?php
+    /** @noinspection PhpUnhandledExceptionInspection */
+
+    use I18nTest\Component\Message\View\ViewInterface;
+    /** @var ViewInterface $this */
+
+    echo $this->getResourceRenderer()->toString();
+?>
+
+<div data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>" data-gi-id="message">
+    <?php echo $this->getMessage(); ?>
+</div>

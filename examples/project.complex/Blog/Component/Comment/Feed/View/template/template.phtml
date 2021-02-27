@@ -1,0 +1,18 @@
+<?php
+    /** @noinspection PhpUnhandledExceptionInspection */
+
+    use Blog\Component\Comment\Feed\View\ViewInterface;
+    /** @var ViewInterface $this */
+
+    echo $this->getResourceRenderer()->toString();
+?>
+
+<div data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>" data-gi-id="entries">
+    <?php foreach ($this->getEntries() as $entry): ?>
+        <div data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>" data-gi-id="entry">
+            <?php echo $entry->toString(); ?>
+        </div>
+    <?php endforeach ?>
+</div>
+
+

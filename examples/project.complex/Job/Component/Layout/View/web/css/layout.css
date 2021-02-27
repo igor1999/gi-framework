@@ -1,0 +1,6 @@
+
+div[data-gi-css~=job-layout][data-gi-id=login] {margin-top: 10px;}
+
+a[data-gi-css~=job-layout][data-gi-id=title] {
+    text-decoration: none; color: black;
+}

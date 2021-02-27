@@ -1,0 +1,6 @@
+
+div[data-gi-css~=blog-layout][data-gi-id=login] {margin-top: 10px;}
+
+div[data-gi-css~=blog-layout][data-gi-id=navigation] {margin-top: 15px;}
+
+a[data-gi-css~=blog-layout][data-gi-id=title] {text-decoration: none; color: black;}

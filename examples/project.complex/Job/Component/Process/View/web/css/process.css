@@ -1,0 +1,12 @@
+
+div[data-gi-css~=job-process][data-gi-id=container] {
+    border-top: 1px solid black; padding: 10px 0 0 0;
+}
+
+progress[data-gi-css~=job-process][data-gi-id=progress-bar] {
+    width: 300px; height: 30px;
+}
+
+input[data-gi-css~=job-process][data-gi-id=start-button] {
+    background: white; padding: 2px; font-size: 12px;
+}

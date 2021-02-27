@@ -1,0 +1,4 @@
+
+input[data-gi-css~=blog-user-login-autocomplete][data-gi-id=textbox] {
+    border: 1px solid #ccc; width: 150px;
+}

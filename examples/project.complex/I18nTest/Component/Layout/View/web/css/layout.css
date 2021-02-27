@@ -1,0 +1,8 @@
+
+div[data-gi-css~=i18n-test-layout][data-gi-id=locales] {
+    margin-top: 15px; background-color: #eaeaea;
+}
+
+a[data-gi-css~=i18n-test-layout][data-gi-id=title] {
+    text-decoration: none; color: black;
+}

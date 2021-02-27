@@ -1,0 +1,4 @@
+
+div[data-gi-css~=job-home][data-gi-id=prompt] {
+    font-size: 14px; border-top: 1px solid black; padding: 10px 0 0 0;
+}

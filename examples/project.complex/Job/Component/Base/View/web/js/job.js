@@ -1,0 +1,5 @@
+giClient.custom.job = {
+    process: {
+
+    }
+};

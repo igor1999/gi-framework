@@ -1,0 +1,9 @@
+1. Create database from job.sql.
+
+2. Create user in table `user`.
+
+3. Open site with URL your-server/job.
+
+4. Log in.
+
+5. Press "start" button to start background process. Then progress bar will show the current process percentage.

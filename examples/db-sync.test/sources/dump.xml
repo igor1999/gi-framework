@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--suppress HtmlUnknownTag, HtmlUnknownAttribute -->
+<tables>
+            <table name="order">
+            <columns>
+                                    <column name="id">
+                                                    <index >
+1
+</index>
+                                                                                                        <type >
+int
+</type>
+                                                    <default >
+
+</default>
+                                                    <primary >
+1
+</primary>
+                                                    <null >
+
+</null>
+                                            </column>
+                                    <column name="person_id">
+                                                    <index >
+2
+</index>
+                                                                                                        <type >
+int
+</type>
+                                                    <default >
+0
+</default>
+                                                    <primary >
+
+</primary>
+                                                    <null >
+
+</null>
+                                            </column>
+                                    <column name="amount">
+                                                    <index >
+3
+</index>
+                                                                                                        <type >
+float
+</type>
+                                                    <default >
+NULL
+</default>
+                                                    <primary >
+
+</primary>
+                                                    <null >
+1
+</null>
+                                            </column>
+                            </columns>
+        </table>
+            <table name="person">
+            <columns>
+                                    <column name="id">
+                                                    <index >
+1
+</index>
+                                                                                                        <type >
+int
+</type>
+                                                    <default >
+
+</default>
+                                                    <primary >
+1
+</primary>
+                                                    <null >
+
+</null>
+                                            </column>
+                                    <column name="forename">
+                                                    <index >
+2
+</index>
+                                                                                                        <type >
+varchar
+</type>
+                                                    <default >
+NULL
+</default>
+                                                    <primary >
+
+</primary>
+                                                    <null >
+1
+</null>
+                                            </column>
+                                    <column name="surname">
+                                                    <index >
+3
+</index>
+                                                                                                        <type >
+varchar
+</type>
+                                                    <default >
+NULL
+</default>
+                                                    <primary >
+
+</primary>
+                                                    <null >
+1
+</null>
+                                            </column>
+                            </columns>
+        </table>
+    </tables>

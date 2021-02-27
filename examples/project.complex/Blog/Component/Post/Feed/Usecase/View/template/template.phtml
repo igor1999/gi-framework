@@ -1,0 +1,25 @@
+<?php
+    /** @noinspection PhpUnhandledExceptionInspection */
+
+    use Blog\Component\Post\Feed\Usecase\View\ViewInterface;
+    /** @var ViewInterface $this */
+
+    echo $this->getResourceRenderer()->toString();
+?>
+
+<div data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>" data-gi-id="search">
+    <?php echo $this->getSearchComponent()->toString(); ?>
+</div>
+<div data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>" data-gi-id="navi">
+    <?php if ($this->isAuth()): ?>
+        <a href="<?php echo $this->blogGetRouteTree()->getPostTree()->getNew()->build(); ?>">
+            <?php echo $this->translate('new post'); ?>
+        </a>
+    <?php endif; ?>
+    <a href="<?php echo $this->blogGetRouteTree()->getUserTree()->getStatisticTree()->getTotally()->build(); ?>">
+        <?php echo $this->translate('user statistic totally'); ?>
+    </a>
+</div>
+<div data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>" data-gi-id="post-feed">
+    <?php echo $this->getFeedSetComponent()->toString(); ?>
+</div>

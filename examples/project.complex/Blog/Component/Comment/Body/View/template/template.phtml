@@ -1,0 +1,12 @@
+<?php
+    /** @noinspection PhpUnhandledExceptionInspection */
+
+    use Blog\Component\Comment\Body\View\ViewInterface;
+    /** @var ViewInterface $this */
+
+    echo $this->getResourceRenderer()->toString();
+?>
+
+<div data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>" data-gi-id="text">
+    <?php echo $this->getMarkupTextProcessor()->prepareText($this->getComment()->getText()); ?>
+</div>

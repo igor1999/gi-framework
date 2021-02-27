@@ -1,0 +1,4 @@
+
+p[data-gi-css~=blog-comment-header][data-gi-id=author-time] {
+    padding: 5px 0 10px 0; font-weight: bold;
+}

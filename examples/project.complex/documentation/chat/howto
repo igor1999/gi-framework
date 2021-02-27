@@ -1,0 +1,13 @@
+1. Create database from chat.sql.
+
+2. Create user in table `user`.
+
+3. Create demon with name "conversation" in table `demon`.
+
+4. Start demon with php.exe path/to/project.complex/_bootstrap/cli.cli.php @route=chat/socket/conversation/demon.
+
+5. Open site with URL your-server/chat.
+
+6. Log in.
+
+7. Chat.

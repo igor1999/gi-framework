@@ -1,0 +1,21 @@
+<?php
+    /** @noinspection PhpUnhandledExceptionInspection */
+
+    use Blog\Component\Comment\Footer\View\ViewInterface;
+    /** @var ViewInterface $this */
+
+    echo $this->getResourceRenderer()->toString();
+?>
+
+<div data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>" data-gi-id="navi-holder">
+    <?php if ($this->isAllowDelete()): ?>
+        <?php $id = $this->getComment()->getID(); ?>
+        <div data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>" data-gi-id="remove-holder">
+            <a href="<?php echo $this->blogGetRouteTree()->getCommentTree()->buildDeleteWithId($id); ?>"
+                    data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>"
+                    data-gi-id="navi-link">
+                <?php echo $this->translate('remove') ?>
+            </a>
+        </div>
+    <?php endif ?>
+</div>

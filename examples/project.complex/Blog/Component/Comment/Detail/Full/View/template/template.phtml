@@ -1,0 +1,18 @@
+<?php
+    /** @noinspection PhpUnhandledExceptionInspection */
+
+    use Blog\Component\Comment\Detail\Full\View\ViewInterface;
+    /** @var ViewInterface $this */
+
+    echo $this->getResourceRenderer()->toString();
+?>
+
+<div data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>" data-gi-id="header">
+    <?php echo $this->getHeader()->toString(); ?>
+</div>
+<div data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>" data-gi-id="body">
+    <?php echo $this->getBody()->toString(); ?>
+</div>
+<div data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>" data-gi-id="footer">
+    <?php echo $this->getFooter()->toString(); ?>
+</div>

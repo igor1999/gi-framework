@@ -1,0 +1,15 @@
+<?php
+    /** @noinspection PhpUnhandledExceptionInspection */
+
+    use Blog\Component\Comment\Usecase\Creation\View\ViewInterface;
+    /** @var ViewInterface $this */
+
+    echo $this->getResourceRenderer()->toString();
+?>
+
+<div data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>" data-gi-id="post">
+    <?php echo $this->getPostDetailComponent()->toString(); ?>
+</div>
+<div data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>" data-gi-id="comment-form">
+    <?php echo $this->getCommentFormComponent()->toString(); ?>
+</div>

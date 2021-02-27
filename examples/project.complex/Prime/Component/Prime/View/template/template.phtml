@@ -1,0 +1,20 @@
+<?php
+    /** @noinspection PhpUnhandledExceptionInspection */
+
+    use Prime\Component\Prime\View\ViewInterface;
+    /** @var ViewInterface $this */
+
+    echo $this->getResourceRenderer()->toString();
+?>
+
+<div data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>" data-gi-id="paging">
+    <?php echo $this->getPaging()->toString(); ?>
+</div>
+<div data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>" data-gi-id="paging-info">
+    <?php
+        echo $this->getPaging()->getView()->getDescriptionForEntriesTotal();
+    ?>
+</div>
+<div data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>" data-gi-id="table">
+    <?php echo $this->getWidget()->toString(); ?>
+</div>

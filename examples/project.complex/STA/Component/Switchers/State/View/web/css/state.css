@@ -1,0 +1,8 @@
+
+div[data-gi-css~=sta-switchers-state][data-gi-id=container] > div > div[data-gi-cell] > div[data-value="1"][data-selected="1"] {
+    background: yellow;
+}
+
+div[data-gi-css~=sta-switchers-state][data-gi-id=container] > div > div[data-gi-cell] > div[data-value="2"][data-selected="1"] {
+    background: #ff8888;
+}

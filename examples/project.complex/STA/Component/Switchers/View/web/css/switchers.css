@@ -1,0 +1,16 @@
+
+fieldset[data-gi-css~=sta-switchers][data-gi-id=main-fieldset] fieldset {
+    width: 260px;
+}
+
+fieldset[data-gi-css~=sta-switchers] > legend {
+    font-size: 12px;
+}
+
+fieldset[data-gi-css~=sta-switchers] {
+    padding: 5px;
+}
+
+fieldset[data-gi-css~=sta-switchers] > div > div > div[data-gi-cell] {
+    padding: 3px 10px 3px 10px;
+}

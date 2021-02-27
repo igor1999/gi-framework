@@ -1,0 +1,6 @@
+
+td[data-gi-css~=gi-calendar][data-gi-id=content-table] tr > td {}
+
+td[data-gi-css~=gi-calendar][data-gi-id=content-table]  tr > td a {
+    font-size: 12px;
+}

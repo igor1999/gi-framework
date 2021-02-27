@@ -1,0 +1,10 @@
+<?php
+
+namespace Job\Component\Process\View;
+
+use Job\Component\Base\View\ResourceRendererInterface as BaseInterface;
+
+interface ResourceRendererInterface extends BaseInterface
+{
+
+}

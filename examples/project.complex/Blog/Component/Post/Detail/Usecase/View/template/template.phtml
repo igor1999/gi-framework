@@ -1,0 +1,16 @@
+<?php
+    /** @noinspection PhpUnhandledExceptionInspection */
+
+    use Blog\Component\Post\Detail\Usecase\View\ViewInterface;
+    /** @var ViewInterface $this */
+
+    echo $this->getResourceRenderer()->toString();
+?>
+
+<div data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>" data-gi-id="post">
+    <?php echo $this->getPostDetailComponent()->toString(); ?>
+</div>
+<a id="comments"></a>
+<div data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>" data-gi-id="comment-feed">
+    <?php echo $this->getCommentFeedComponent()->toString(); ?>
+</div>

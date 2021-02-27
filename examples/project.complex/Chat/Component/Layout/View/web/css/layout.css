@@ -1,0 +1,6 @@
+
+div[data-gi-css~=chat-layout][data-gi-id=login] {margin-top: 10px;}
+
+a[data-gi-css~=chat-layout][data-gi-id=title] {
+    text-decoration: none; color: black;
+}

@@ -1,0 +1,40 @@
+<?php
+    /** @noinspection PhpUnhandledExceptionInspection */
+
+    use Blog\Component\Post\Footer\View\ViewInterface;
+    /** @var ViewInterface $this */
+
+    echo $this->getResourceRenderer()->toString();
+?>
+
+<div data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>" data-gi-id="comments-count" class="cell">
+   <a href="<?php echo $this->blogGetRouteTree()->getPostTree()->buildDetailWithId($this->getPost()->getID()); ?>#comments">
+       <?php echo $this->getPost()->getCommentsCount(), ' ', $this->translate('Comment(s)') ?>
+   </a>
+</div>
+<div data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>" data-gi-id="navi-holder" class="cell-right">
+    <?php if ($this->isAllowEdit()): ?>
+        <div data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>"
+                data-gi-id="edit-holder"
+                class="cell">
+            <a href="<?php echo $this->blogGetRouteTree()->getPostTree()->buildEditWithId($this->getPost()->getID()); ?>"
+                    data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>"
+                    data-gi-id="navi-link">
+                <?php echo $this->translate('edit') ?>
+            </a>
+        </div>
+    <?php endif ?>
+    <?php if ($this->isAllowAddComment()): ?>
+        <div data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>"
+                data-gi-id="add-comment-holder"
+                class="cell">
+            <a href="<?php echo $this->blogGetRouteTree()->getCommentTree()->buildNewWithPostID($this->getPost()->getID()); ?>"
+                    data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>"
+                    data-gi-id="navi-link">
+                <?php echo $this->translate('add comment') ?>
+            </a>
+        </div>
+    <?php endif ?>
+    <div class="clear"></div>
+</div>
+<div class="clear"></div>

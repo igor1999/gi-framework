@@ -1,0 +1,20 @@
+
+form[data-gi-css~=blog-comment-modifying-base][data-gi-id=form] > div > div > div[data-gi-cell]  {
+    padding: 10px;
+}
+
+textarea[data-gi-css~=blog-comment-modifying-base][data-gi-id=text-input] {
+    font-size: 11px; width: 570px; height: 300px; padding: 3px;
+}
+
+input[data-gi-css~=blog-comment-modifying-base][data-gi-id=submit-button] {
+    padding: 3px; background-color: white; font-size: 11px;
+}
+
+div[data-gi-css~=blog-comment-modifying-base][data-gi-id=result-message-container] {
+    font-size: 11px; color: green;
+}
+
+div[data-gi-css~=blog-comment-modifying-base][data-gi-id=result-message-container].gi-error {
+    color: red;
+}

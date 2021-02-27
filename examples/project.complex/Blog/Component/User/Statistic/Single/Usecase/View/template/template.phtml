@@ -1,0 +1,15 @@
+<?php
+    /** @noinspection PhpUnhandledExceptionInspection */
+
+    use Blog\Component\User\Statistic\Single\Usecase\View\ViewInterface;
+    /** @var ViewInterface $this */
+
+    echo $this->getResourceRenderer()->toString();
+?>
+
+<div data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>" data-gi-id="title">
+    <?php echo $this->translate('Activity(posts) of user'), ' ', $this->getUser()->getLogin(); ?>
+</div>
+<div data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>" data-gi-id="calendar">
+    <?php echo $this->getCalendar()->toString(); ?>
+</div>

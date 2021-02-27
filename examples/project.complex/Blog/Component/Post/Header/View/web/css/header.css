@@ -1,0 +1,8 @@
+
+p[data-gi-css~=blog-post-header][data-gi-id=title] {
+    padding: 5px 0 5px 0; font-weight: bold;
+}
+
+p[data-gi-css~=blog-post-header][data-gi-id=author-time] {
+    padding: 5px 0 10px 0; font-weight: bold;
+}

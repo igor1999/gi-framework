@@ -1,0 +1,18 @@
+
+div[data-gi-css~=chat-conversation][data-gi-id=container] {}
+
+div[data-gi-css~=chat-conversation][data-gi-id=board] {
+    height: 500px; width: 600px; background: white; overflow: auto; border: 1px inset black; padding: 5px;
+}
+
+div[data-gi-css~=chat-conversation][data-gi-id=message-container] {
+    overflow: auto; height: 80px; color: red; font-weight: bold; padding: 5px;
+}
+
+textarea[data-gi-css~=chat-conversation][data-gi-id=textbox] {
+    height: 50px; width: 600px; font-size: 12px; padding: 5px;
+}
+
+input[data-gi-css~=chat-conversation][data-gi-id=send-button] {
+    background: white; padding: 2px; font-size: 12px;
+}

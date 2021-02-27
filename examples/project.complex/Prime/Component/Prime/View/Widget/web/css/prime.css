@@ -1,0 +1,10 @@
+
+table[data-gi-css~=prime-prime-widget][data-gi-id=table] {}
+
+table[data-gi-css~=prime-prime-widget][data-gi-id=table] tr:nth-child(even) {}
+
+table[data-gi-css~=prime-prime-widget][data-gi-id=table] tr:nth-child(odd) {}
+
+table[data-gi-css~=prime-prime-widget][data-gi-id=table] tr > td  {
+    background-color: white; padding: 5px;
+}

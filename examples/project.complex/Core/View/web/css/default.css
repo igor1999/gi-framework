@@ -1,0 +1,33 @@
+
+* {margin: 0; padding: 0; font-size: 14px;}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #ccc;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #ccc;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #ccc;
+}
+
+input, select {font-size: 12px; border: 1px outset #ccc; padding: 1px;}
+
+div.cell {float: left;}
+
+div.cell-right {float: right;}
+
+div.clear {clear: both;}
+
+.great {font-size: 18px;}
+
+.bold {font-weight: bold;}
+
+.italic {font-style: italic;}
+
+.even {background-color: #f2f2f2;}
+
+.odd {background-color: #e5e5e5;}

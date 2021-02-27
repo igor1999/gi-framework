@@ -1,0 +1,5 @@
+1. Create database from db_sync.sql.
+
+2. Make database dump: php.exe path/to/db-sync.test/index.php @route=dump
+
+3. Compare dump with actual database structure: php.exe path/to/db-sync.test/index.php @route=check

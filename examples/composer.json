@@ -1,0 +1,15 @@
+{
+    "name": "gi/test",
+    "description": "GI tests",
+    "authors": [
+        {
+            "name": "Igor Gilman"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "7.2.0",
+        "gi-framework/gi-framework": "*.*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

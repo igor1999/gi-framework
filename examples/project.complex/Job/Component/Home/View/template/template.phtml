@@ -1,0 +1,16 @@
+<?php
+    /** @noinspection PhpUnhandledExceptionInspection */
+
+    use Job\Component\Home\View\ViewInterface;
+    /** @var ViewInterface $this */
+
+    echo $this->getResourceRenderer()->toString();
+?>
+
+<div data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>" data-gi-id="prompt">
+    <?php if ($this->isAuth()): ?>
+        <a href="<?php echo $this->jobGetRouteTree()->getProcessTree()->getProcess()->build(); ?>">To process test</a>
+    <?php else: ?>
+        Welcome to the process test. Please sign in.
+    <?php endif ?>
+</div>

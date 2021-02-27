@@ -1,0 +1,10 @@
+
+div[data-gi-css~=prime-prime-view][data-gi-id=paging] {}
+
+div[data-gi-css~=prime-prime-view][data-gi-id=paging-info] {
+    margin-top: 30px;
+}
+
+div[data-gi-css~=prime-prime-view][data-gi-id=table] {
+    margin-top: 10px;
+}

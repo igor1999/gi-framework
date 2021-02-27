@@ -1,0 +1,4 @@
+
+input[data-gi-css~=blog-comment-modifying-removing-widget][data-gi-id=delete-button] {
+    padding: 3px; background-color: lightpink; font-size: 11px;
+}
