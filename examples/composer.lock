@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/igor1999/GI.git",
-                "reference": "c11a4a9c4bf115002f74655cbe89de159964a98c"
+                "reference": "2da250e0d7b3546f2fbdcf6a82a790282e1c321d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/igor1999/GI/zipball/c11a4a9c4bf115002f74655cbe89de159964a98c",
-                "reference": "c11a4a9c4bf115002f74655cbe89de159964a98c",
+                "url": "https://api.github.com/repos/igor1999/GI/zipball/2da250e0d7b3546f2fbdcf6a82a790282e1c321d",
+                "reference": "2da250e0d7b3546f2fbdcf6a82a790282e1c321d",
                 "shasum": ""
             },
             "require": {
@@ -27,7 +27,7 @@
             "type": "library",
             "autoload": {
                 "classmap": [
-                    "."
+                    "GI"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -39,7 +39,7 @@
                 "issues": "https://github.com/igor1999/GI/issues",
                 "source": "https://github.com/igor1999/GI/tree/master"
             },
-            "time": "2021-02-27T15:02:41+00:00"
+            "time": "2021-02-28T10:37:38+00:00"
         }
     ],
     "packages-dev": [],
