@@ -6,8 +6,14 @@
             "name": "Igor Gilman"
         }
     ],
-    "require": {
+    "require-dev": {
+        "phpunit/phpunit": "7.2.0",
         "gi-framework/gi-framework": "*.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "GITest\\": "tests/GITest"
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true
