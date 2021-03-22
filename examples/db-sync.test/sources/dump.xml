@@ -11,6 +11,9 @@
                                                                                                         <type >
 int
 </type>
+                                                    <length >
+0
+</length>
                                                     <default >
 
 </default>
@@ -20,6 +23,9 @@ int
                                                     <null >
 
 </null>
+                                                    <identity >
+1
+</identity>
                                             </column>
                                     <column name="person_id">
                                                     <index >
@@ -28,6 +34,9 @@ int
                                                                                                         <type >
 int
 </type>
+                                                    <length >
+0
+</length>
                                                     <default >
 0
 </default>
@@ -37,6 +46,9 @@ int
                                                     <null >
 
 </null>
+                                                    <identity >
+
+</identity>
                                             </column>
                                     <column name="amount">
                                                     <index >
@@ -45,6 +57,9 @@ int
                                                                                                         <type >
 float
 </type>
+                                                    <length >
+0
+</length>
                                                     <default >
 NULL
 </default>
@@ -54,6 +69,9 @@ NULL
                                                     <null >
 1
 </null>
+                                                    <identity >
+
+</identity>
                                             </column>
                             </columns>
         </table>
@@ -66,6 +84,9 @@ NULL
                                                                                                         <type >
 int
 </type>
+                                                    <length >
+0
+</length>
                                                     <default >
 
 </default>
@@ -75,6 +96,9 @@ int
                                                     <null >
 
 </null>
+                                                    <identity >
+1
+</identity>
                                             </column>
                                     <column name="forename">
                                                     <index >
@@ -83,6 +107,9 @@ int
                                                                                                         <type >
 varchar
 </type>
+                                                    <length >
+30
+</length>
                                                     <default >
 NULL
 </default>
@@ -92,6 +119,9 @@ NULL
                                                     <null >
 1
 </null>
+                                                    <identity >
+
+</identity>
                                             </column>
                                     <column name="surname">
                                                     <index >
@@ -100,6 +130,9 @@ NULL
                                                                                                         <type >
 varchar
 </type>
+                                                    <length >
+30
+</length>
                                                     <default >
 NULL
 </default>
@@ -109,6 +142,9 @@ NULL
                                                     <null >
 1
 </null>
+                                                    <identity >
+
+</identity>
                                             </column>
                             </columns>
         </table>
