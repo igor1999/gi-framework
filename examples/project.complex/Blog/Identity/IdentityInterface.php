@@ -2,7 +2,7 @@
 
 namespace Blog\Identity;
 
-use GI\Identity\IdentityInterface as BaseInterface;
+use GI\Identity\ArrayIdentity\IdentityInterface as BaseInterface;
 use Blog\RDB\ORM\Post\RecordInterface as PostRecordInterface;
 use Blog\RDB\ORM\Comment\RecordInterface as CommentRecordInterface;
 

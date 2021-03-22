@@ -2,7 +2,7 @@
 
 namespace Chat\Identity;
 
-use GI\Identity\AbstractIdentity;
+use GI\Identity\ArrayIdentity\AbstractIdentity;
 use Chat\Identity\I18n\Glossary;
 
 use Chat\ServiceLocator\ServiceLocatorAwareTrait;
@@ -43,16 +43,6 @@ class Identity extends AbstractIdentity implements IdentityInterface
     protected function createByCredentials(string $login, string $password)
     {
         return $this->chatGetRDBDALFactory()->getUserDAL()->authenticate($login, $password);
-    }
-
-    /**
-     * @param array $data
-     * @return array
-     * @throws \Exception
-     */
-    protected function createByUserData(array $data)
-    {
-        return $this->chatGetRDBORMFactory()->createUserRecord($data)->extract();
     }
 
     /**

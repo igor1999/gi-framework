@@ -2,7 +2,7 @@
 
 namespace Blog\Identity;
 
-use GI\Identity\AbstractIdentity;
+use GI\Identity\ArrayIdentity\AbstractIdentity;
 use Blog\Identity\I18n\Glossary;
 
 use Blog\ServiceLocator\ServiceLocatorAwareTrait;
@@ -45,16 +45,6 @@ class Identity extends AbstractIdentity implements IdentityInterface
     protected function createByCredentials(string $login, string $password)
     {
         return $this->blogGetRDBDALFactory()->getUserDAL()->authenticate($login, $password);
-    }
-
-    /**
-     * @param array $data
-     * @return array
-     * @throws \Exception
-     */
-    protected function createByUserData(array $data)
-    {
-        return $this->blogGetRDBORMFactory()->createUserRecord($data)->extract();
     }
 
     /**

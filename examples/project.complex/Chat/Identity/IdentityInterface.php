@@ -2,7 +2,7 @@
 
 namespace Chat\Identity;
 
-use GI\Identity\IdentityInterface as BaseInterface;
+use GI\Identity\ArrayIdentity\IdentityInterface as BaseInterface;
 
 /**
  * Interface IdentityInterface
