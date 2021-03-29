@@ -43,7 +43,7 @@ class Short extends AbstractDetail implements ShortInterface
     /**
      * @return ViewInterface
      */
-    public function getView()
+    protected function getView()
     {
         return $this->view;
     }

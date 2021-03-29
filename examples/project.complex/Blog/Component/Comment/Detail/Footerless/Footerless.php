@@ -41,7 +41,7 @@ class Footerless extends AbstractDetail implements FooterlessInterface
     /**
      * @return ViewInterface
      */
-    public function getView()
+    protected function getView()
     {
         return $this->view;
     }

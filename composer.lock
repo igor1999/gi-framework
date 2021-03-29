@@ -82,12 +82,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/igor1999/GI.git",
-                "reference": "82b2a69afd29dfe9fd622a640824b95b661a6541"
+                "reference": "eec7ac23d5439cf5451632b4fca1fc8ac938d4fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/igor1999/GI/zipball/82b2a69afd29dfe9fd622a640824b95b661a6541",
-                "reference": "82b2a69afd29dfe9fd622a640824b95b661a6541",
+                "url": "https://api.github.com/repos/igor1999/GI/zipball/eec7ac23d5439cf5451632b4fca1fc8ac938d4fe",
+                "reference": "eec7ac23d5439cf5451632b4fca1fc8ac938d4fe",
                 "shasum": ""
             },
             "require": {
@@ -109,7 +109,7 @@
                 "issues": "https://github.com/igor1999/GI/issues",
                 "source": "https://github.com/igor1999/GI/tree/master"
             },
-            "time": "2021-03-22T03:15:37+00:00"
+            "time": "2021-03-29T19:03:56+00:00"
         },
         {
             "name": "myclabs/deep-copy",

@@ -43,7 +43,7 @@ class Full extends AbstractDetail implements FullInterface
     /**
      * @return ViewInterface
      */
-    public function getView()
+    protected function getView()
     {
         return $this->view;
     }
