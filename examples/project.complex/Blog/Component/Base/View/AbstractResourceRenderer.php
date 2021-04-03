@@ -17,8 +17,8 @@ abstract class AbstractResourceRenderer extends Base
      */
     public function __construct()
     {
-        parent::__construct();
-
         $this->addBlogJS();
+
+        parent::__construct();
     }
 }
