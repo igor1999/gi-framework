@@ -17,18 +17,4 @@ class ResourceRenderer extends Base implements ResourceRendererInterface
         'js/removing.js',
         'js/factory.js'
     ];
-
-
-    /**
-     * AbstractResourceRenderer constructor.
-     * @throws \Exception
-     */
-    public function __construct()
-    {
-        parent::__construct();
-
-        $this->createContents(
-            self::class, '', self::URL_BASE_DIR, self::CSS_PATHS, self::JS_PATHS
-        );
-    }
 }

@@ -13,22 +13,8 @@ class ResourceRenderer extends Base implements ResourceRendererInterface
         'css/totally.css'
     ];
 
-    const IMG_PATHS = [
+    const IMAGE_PATHS = [
         'img/arrow-up.png',
         'img/arrow-down.png'
     ];
-
-
-    /**
-     * ResourceRenderer constructor.
-     * @throws \Exception
-     */
-    public function __construct()
-    {
-        parent::__construct();
-
-        $this->createContents(self::class, '', self::URL_BASE_DIR,
-            self::CSS_PATHS, [], self::IMG_PATHS
-        );
-    }
 }
