@@ -12,8 +12,4 @@ class ResourceRenderer extends Base implements ResourceRendererInterface
     const CSS_PATHS = [
         'css/creation.css'
     ];
-
-    const JS_PATHS = [
-        'js/modifying.js'
-    ];
 }
