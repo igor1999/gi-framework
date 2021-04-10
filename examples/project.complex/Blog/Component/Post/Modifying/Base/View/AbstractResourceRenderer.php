@@ -16,4 +16,16 @@ abstract class AbstractResourceRenderer extends Base implements ResourceRenderer
     const JS_PATHS = [
         'js/modifying.js'
     ];
+
+
+    /**
+     * AbstractResourceRenderer constructor.
+     * @throws \Exception
+     */
+    public function __construct()
+    {
+        parent::__construct();
+
+        $this->createClassContents(self::class);
+    }
 }
