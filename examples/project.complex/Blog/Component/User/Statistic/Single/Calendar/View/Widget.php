@@ -21,6 +21,8 @@ class Widget extends AbstractWidget implements WidgetInterface
 
     const CLIENT_CSS = 'blog-user-statistic-post-calendar';
 
+    const CLIENT_JS  = self::CLIENT_CSS;
+
 
     const CLASS_LINK_CELL = 'gi-link-cell';
 
