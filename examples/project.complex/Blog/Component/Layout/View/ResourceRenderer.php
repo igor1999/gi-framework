@@ -18,4 +18,16 @@ class ResourceRenderer extends AbstractResourceRenderer implements ResourceRende
     const CSS_PATHS = [
         'css/layout.css'
     ];
+
+
+    /**
+     * AbstractResourceRenderer constructor.
+     * @throws \Exception
+     */
+    public function __construct()
+    {
+        parent::__construct();
+
+        $this->createClassContents(self::class);
+    }
 }

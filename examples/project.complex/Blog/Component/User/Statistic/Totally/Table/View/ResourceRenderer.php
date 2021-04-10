@@ -17,4 +17,16 @@ class ResourceRenderer extends Base implements ResourceRendererInterface
         'img/arrow-up.png',
         'img/arrow-down.png'
     ];
+
+
+    /**
+     * AbstractResourceRenderer constructor.
+     * @throws \Exception
+     */
+    public function __construct()
+    {
+        parent::__construct();
+
+        $this->createClassContents(self::class);
+    }
 }
