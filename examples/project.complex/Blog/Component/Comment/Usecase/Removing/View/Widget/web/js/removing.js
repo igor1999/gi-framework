@@ -1,3 +1,5 @@
+giClient.core.customNamespace('blog.comment.modifying.removing');
+
 giClient.custom.blog.comment.modifying.removing.Removing = function()
 {
     giClient.core.widget.Base.call(this);

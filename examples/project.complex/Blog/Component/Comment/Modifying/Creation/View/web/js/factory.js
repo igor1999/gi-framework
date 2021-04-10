@@ -1,3 +1,5 @@
+giClient.core.customNamespace('blog.comment.modifying.creation');
+
 giClient.custom.blog.comment.modifying.creation.factory = new function()
 {
     giClient.core.widget.Factory.call(this);

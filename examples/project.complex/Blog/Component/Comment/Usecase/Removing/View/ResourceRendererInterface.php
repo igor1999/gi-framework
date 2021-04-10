@@ -2,7 +2,7 @@
 
 namespace Blog\Component\Comment\Usecase\Removing\View;
 
-use Blog\Component\Base\View\ResourceRendererInterface as BaseInterface;
+use Core\View\ResourceRendererInterface as BaseInterface;
 
 interface ResourceRendererInterface extends BaseInterface
 {

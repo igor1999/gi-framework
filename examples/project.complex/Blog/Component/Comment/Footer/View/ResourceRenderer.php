@@ -2,7 +2,7 @@
 
 namespace Blog\Component\Comment\Footer\View;
 
-use Blog\Component\Base\View\AbstractResourceRenderer as Base;
+use Core\View\AbstractResourceRenderer as Base;
 
 class ResourceRenderer extends Base implements ResourceRendererInterface
 {

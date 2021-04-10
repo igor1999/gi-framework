@@ -1,3 +1,5 @@
+giClient.core.customNamespace('blog.post.modifying.base');
+
 giClient.custom.blog.post.modifying.base.Modifying = function()
 {
     giClient.core.widget.Base.call(this);

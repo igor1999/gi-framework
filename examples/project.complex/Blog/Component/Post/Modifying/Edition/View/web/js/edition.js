@@ -1,3 +1,5 @@
+giClient.core.customNamespace('blog.post.modifying.edition');
+
 giClient.custom.blog.post.modifying.edition.Editing = function()
 {
     giClient.custom.blog.post.modifying.base.Modifying.call(this);

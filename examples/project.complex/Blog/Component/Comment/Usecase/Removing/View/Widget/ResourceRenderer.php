@@ -2,7 +2,7 @@
 
 namespace Blog\Component\Comment\Usecase\Removing\View\Widget;
 
-use Blog\Component\Base\View\AbstractResourceRenderer as Base;
+use Core\View\AbstractResourceRenderer as Base;
 
 class ResourceRenderer extends Base implements ResourceRendererInterface
 {

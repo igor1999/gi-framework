@@ -1,3 +1,5 @@
+giClient.core.customNamespace('blog.user.statistic.single.calendar');
+
 giClient.custom.blog.user.statistic.single.calendar.factory = new function()
 {
     giClient.component.calendar.Factory.call(this);

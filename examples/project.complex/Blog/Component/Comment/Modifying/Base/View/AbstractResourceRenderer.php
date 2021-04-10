@@ -2,7 +2,7 @@
 
 namespace Blog\Component\Comment\Modifying\Base\View;
 
-use Blog\Component\Base\View\AbstractResourceRenderer as Base;
+use Core\View\AbstractResourceRenderer as Base;
 
 abstract class AbstractResourceRenderer extends Base implements ResourceRendererInterface
 {
