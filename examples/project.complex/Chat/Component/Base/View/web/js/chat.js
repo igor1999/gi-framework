@@ -1,5 +1,0 @@
-giClient.custom.chat = {
-    conversation: {
-
-    }
-};

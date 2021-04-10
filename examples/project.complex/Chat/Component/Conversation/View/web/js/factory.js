@@ -1,3 +1,5 @@
+giClient.core.customNamespace('chat.conversation');
+
 giClient.custom.chat.conversation.factory = new function()
 {
     giClient.core.widget.Factory.call(this);

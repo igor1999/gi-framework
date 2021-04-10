@@ -2,7 +2,7 @@
 
 namespace Chat\Component\Conversation\View;
 
-use Chat\Component\Base\View\AbstractResourceRenderer as Base;
+use Core\View\AbstractResourceRenderer as Base;
 
 class ResourceRenderer extends Base implements ResourceRendererInterface
 {
@@ -17,4 +17,16 @@ class ResourceRenderer extends Base implements ResourceRendererInterface
         'js/conversation.js',
         'js/factory.js'
     ];
+
+
+    /**
+     * ResourceRenderer constructor.
+     * @throws \Exception
+     */
+    public function __construct()
+    {
+        parent::__construct();
+
+        $this->createClassContents(self::class);
+    }
 }

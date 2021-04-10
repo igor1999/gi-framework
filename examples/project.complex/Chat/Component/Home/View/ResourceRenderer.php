@@ -2,7 +2,7 @@
 
 namespace Chat\Component\Home\View;
 
-use Chat\Component\Base\View\AbstractResourceRenderer as Base;
+use Core\View\AbstractResourceRenderer as Base;
 
 use Chat\ServiceLocator\ServiceLocatorAwareTrait;
 
@@ -17,4 +17,16 @@ class ResourceRenderer extends Base implements ResourceRendererInterface
     const CSS_PATHS = [
         'css/home.css'
     ];
+
+
+    /**
+     * ResourceRenderer constructor.
+     * @throws \Exception
+     */
+    public function __construct()
+    {
+        parent::__construct();
+
+        $this->createClassContents(self::class);
+    }
 }
