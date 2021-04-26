@@ -9,6 +9,7 @@ use Blog\Component\Post\I18n\I18nAwareTrait;
 
 use GI\DOM\HTML\Element\Form\Layouts\Fieldset\FieldsetInterface as FieldsetLayoutInterface;
 use GI\DOM\HTML\Element\Form\Layouts\Form\FormInterface as FormLayoutInterface;
+use Blog\Component\User\LoginAutocomplete\LoginAutocompleteInterface;
 use GI\DOM\HTML\Element\Input\Button\SubmitInterface;
 use GI\DOM\HTML\Element\Input\DateTime\DateInputInterface;
 use GI\DOM\HTML\Element\Input\Text\TextInterface;
@@ -75,34 +76,40 @@ class Widget extends AbstractWidget implements WidgetInterface
      * @gi-id form
      * @return FormLayoutInterface
      */
-    protected function createForm()
+    protected function getForm()
     {
-        $this->form = $this->giGetDOMFactory()->createFormLayout();
+        if (!($this->form instanceof FormLayoutInterface)) {
+            $this->form = $this->giGetDOMFactory()->createFormLayout();
+        }
 
         return $this->form;
     }
 
     /**
      * @create
-     * @return self
+     * @return LoginAutocompleteInterface
      */
-    protected function createAuthorInput()
+    protected function getAuthorInput()
     {
-        $this->authorInput = $this->blogGetComponentFactory()->createLoginAutocomplete(
-            $this->getViewModel()->getUser()->getLoginName(),
-            $this->getViewModel()->getUser()->getLogin()
-        );
+        if (!($this->authorInput instanceof LoginAutocompleteInterface)) {
+            $this->authorInput = $this->blogGetComponentFactory()->createLoginAutocomplete(
+                $this->getViewModel()->getUser()->getLoginName(),
+                $this->getViewModel()->getUser()->getLogin()
+            );
+        }
 
-        return $this;
+        return $this->authorInput;
     }
 
     /**
      * @gi-id dates-fieldset
      * @return FieldsetLayoutInterface
      */
-    protected function createDatesFieldset()
+    protected function getDatesFieldset()
     {
-        $this->datesFieldset = $this->giGetDOMFactory()->createFieldsetLayout($this->translate('create at'));
+        if (!($this->datesFieldset instanceof FieldsetLayoutInterface)) {
+            $this->datesFieldset = $this->giGetDOMFactory()->createFieldsetLayout($this->translate('create at'));
+        }
 
         return $this->datesFieldset;
     }
@@ -111,11 +118,13 @@ class Widget extends AbstractWidget implements WidgetInterface
      * @gi-id date-from
      * @return DateInputInterface
      */
-    protected function createDateFrom()
+    protected function getDateFrom()
     {
-        $this->dateFrom = $this->giGetDOMFactory()->getInputFactory()->createDateInput(
-            $this->getViewModel()->getFromName(), $this->getViewModel()->getFrom()
-        );
+        if (!($this->dateFrom instanceof DateInputInterface)) {
+            $this->dateFrom = $this->giGetDOMFactory()->getInputFactory()->createDateInput(
+                $this->getViewModel()->getFromName(), $this->getViewModel()->getFrom()
+            );
+        }
 
         return $this->dateFrom;
     }
@@ -124,9 +133,11 @@ class Widget extends AbstractWidget implements WidgetInterface
      * @gi-id dates-separator
      * @return SpanInterface
      */
-    protected function createDatesSeparator()
+    protected function getDatesSeparator()
     {
-        $this->datesSeparator = $this->giGetDOMFactory()->createSpan($this->translate('till'));
+        if (!($this->datesSeparator instanceof SpanInterface)) {
+            $this->datesSeparator = $this->giGetDOMFactory()->createSpan($this->translate('till'));
+        }
 
         return $this->datesSeparator;
     }
@@ -135,11 +146,13 @@ class Widget extends AbstractWidget implements WidgetInterface
      * @gi-id date-till
      * @return DateInputInterface
      */
-    protected function createDateTill()
+    protected function getDateTill()
     {
-        $this->dateTill = $this->giGetDOMFactory()->getInputFactory()->createDateInput(
-            $this->getViewModel()->getTillName(), $this->getViewModel()->getTill()
-        );
+        if (!($this->dateTill instanceof DateInputInterface)) {
+            $this->dateTill = $this->giGetDOMFactory()->getInputFactory()->createDateInput(
+                $this->getViewModel()->getTillName(), $this->getViewModel()->getTill()
+            );
+        }
 
         return $this->dateTill;
     }
@@ -148,12 +161,15 @@ class Widget extends AbstractWidget implements WidgetInterface
      * @gi-id title-input
      * @return TextInterface
      */
-    protected function createTitleInput()
+    protected function getTitleInput()
     {
-        $this->titleInput = $this->giGetDOMFactory()->getInputFactory()->createText(
-            $this->getViewModel()->getTitleName(), $this->getViewModel()->getTitle()
-        );
-        $this->titleInput->getAttributes()->setPlaceholder($this->translate('title'));
+        if (!($this->titleInput instanceof TextInterface)) {
+            $this->titleInput = $this->giGetDOMFactory()->getInputFactory()->createText(
+                $this->getViewModel()->getTitleName(), $this->getViewModel()->getTitle()
+            );
+
+            $this->titleInput->getAttributes()->setPlaceholder($this->translate('title'));
+        }
 
         return $this->titleInput;
     }
@@ -162,12 +178,15 @@ class Widget extends AbstractWidget implements WidgetInterface
      * @gi-id text-input
      * @return TextAreaInterface
      */
-    protected function createTextInput()
+    protected function getTextInput()
     {
-        $this->textInput = $this->giGetDOMFactory()->createTextArea(
-            $this->getViewModel()->getTextName(), $this->getViewModel()->getText()
-        );
-        $this->textInput->getAttributes()->setPlaceholder($this->translate('text'));
+        if (!($this->textInput instanceof TextAreaInterface)) {
+            $this->textInput = $this->giGetDOMFactory()->createTextArea(
+                $this->getViewModel()->getTextName(), $this->getViewModel()->getText()
+            );
+
+            $this->textInput->getAttributes()->setPlaceholder($this->translate('text'));
+        }
 
         return $this->textInput;
     }
@@ -176,11 +195,13 @@ class Widget extends AbstractWidget implements WidgetInterface
      * @gi-id submit-button
      * @return SubmitInterface
      */
-    protected function createSubmitButton()
+    protected function getSubmitButton()
     {
-        $this->submitButton = $this->giGetDOMFactory()->getInputFactory()->createSubmit(
-            [], $this->translate('search!')
-        );
+        if (!($this->submitButton instanceof SubmitInterface)) {
+            $this->submitButton = $this->giGetDOMFactory()->getInputFactory()->createSubmit(
+                [], $this->translate('search!')
+            );
+        }
 
         return $this->submitButton;
     }

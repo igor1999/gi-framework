@@ -52,7 +52,7 @@ class Widget extends AbstractWidget implements WidgetInterface
     /**
      * @return TableHeaderInterface
      */
-    public function getHeaderModel()
+    protected function getHeaderModel()
     {
         return $this->headerModel;
     }

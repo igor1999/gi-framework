@@ -25,9 +25,6 @@ use Blog\Component\User\LoginAutocomplete\View\ResourceRenderer as LoginAutocomp
 use GI\Component\Autocomplete\View\WidgetInterface as AutocompleteWidgetInterface;
 use Blog\Component\User\LoginAutocomplete\LoginAutocomplete as LoginAutocomplete;
 
-use GI\Component\Autocomplete\AutocompleteInterface as AutocompleteInterface;
-use Blog\Component\User\LoginAutocomplete\Gate\Gate as LoginAutocompleteGate;
-
 use GI\FileSystem\FSO\FSOFile\Collection\HashSet\HashSetInterface as FSOFileHashSetInterface;
 use GI\Logger\Logger;
 use Blog\Logging\FSO\Map as LoggingFSOMap;
@@ -65,10 +62,6 @@ class DI extends Base implements DIInterface
                 AutocompleteWidgetInterface::class,
                 LoginAutocomplete::class,
                 LoginAutocompleteWidget::class
-            )->create(
-                AutocompleteInterface::class,
-                LoginAutocompleteGate::class,
-                LoginAutocomplete::class
             )->create(
                 FSOFileHashSetInterface::class,Logger::class,LoggingFSOMap::class,true
             );

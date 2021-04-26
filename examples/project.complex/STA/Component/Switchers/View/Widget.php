@@ -81,7 +81,7 @@ class Widget extends AbstractWidget implements WidgetInterface
      * @gi-id main-fieldset
      * @return FieldsetLayoutInterface
      */
-    protected function createMainFieldset()
+    protected function getMainFieldset()
     {
         $this->mainFieldset = $this->giGetDOMFactory()->createFieldsetLayout(
             $this->giTranslate(GlossaryInterface::class, Glossary::class, 'Switchers')
@@ -94,7 +94,7 @@ class Widget extends AbstractWidget implements WidgetInterface
      * @gi-id gender-fieldset
      * @return FieldsetLayoutInterface
      */
-    protected function createGenderFieldset()
+    protected function getGenderFieldset()
     {
         $this->genderFieldset = $this->giGetDOMFactory()->createFieldsetLayout(
             $this->giTranslate(GlossaryInterface::class, Glossary::class, 'Gender')
@@ -108,7 +108,7 @@ class Widget extends AbstractWidget implements WidgetInterface
      * @return self
      * @throws \Exception
      */
-    protected function createGender2Switcher()
+    protected function getGender2Switcher()
     {
         $this->gender2Switcher = $this->giGetComponentFactory()->getSwitcherFactory()->createGender(['gender2']);
         $this->gender2Switcher->getSelection()->selectMale();
@@ -121,7 +121,7 @@ class Widget extends AbstractWidget implements WidgetInterface
      * @return self
      * @throws \Exception
      */
-    protected function createGender3Switcher()
+    protected function getGender3Switcher()
     {
         $this->gender3Switcher = $this->giGetComponentFactory()->getSwitcherFactory()->createGender(['gender3']);
         $this->gender3Switcher->getSelection()->addOthers()->selectOthers();
@@ -133,7 +133,7 @@ class Widget extends AbstractWidget implements WidgetInterface
      * @gi-id on-off-fieldset
      * @return FieldsetLayoutInterface
      */
-    protected function createOnOffFieldset()
+    protected function getOnOffFieldset()
     {
         $this->onOffFieldset = $this->giGetDOMFactory()->createFieldsetLayout(
             $this->giTranslate(GlossaryInterface::class, Glossary::class, 'On/Off')
@@ -147,7 +147,7 @@ class Widget extends AbstractWidget implements WidgetInterface
      * @return self
      * @throws \Exception
      */
-    protected function createOnOffSwitcher()
+    protected function getOnOffSwitcher()
     {
         $this->onOffSwitcher = $this->giGetComponentFactory()->getSwitcherFactory()->createOnOff(['onOff']);
         $this->onOffSwitcher->getSelection()->selectOn();
@@ -159,7 +159,7 @@ class Widget extends AbstractWidget implements WidgetInterface
      * @gi-id salutation-fieldset
      * @return FieldsetLayoutInterface
      */
-    protected function createSalutationFieldset()
+    protected function getSalutationFieldset()
     {
         $this->salutationFieldset = $this->giGetDOMFactory()->createFieldsetLayout(
             $this->giTranslate(GlossaryInterface::class, Glossary::class, 'Salutation')
@@ -173,7 +173,7 @@ class Widget extends AbstractWidget implements WidgetInterface
      * @return self
      * @throws \Exception
      */
-    protected function createSalutationSwitcher()
+    protected function getSalutationSwitcher()
     {
         $this->salutationSwitcher = $this->giGetComponentFactory()->getSwitcherFactory()->createSalutation(
             ['salutation']
@@ -188,7 +188,7 @@ class Widget extends AbstractWidget implements WidgetInterface
      * @return self
      * @throws \Exception
      */
-    protected function createSalutationUnknownSwitcher()
+    protected function getSalutationUnknownSwitcher()
     {
         $this->salutationUnknownSwitcher = $this->giGetComponentFactory()->getSwitcherFactory()->createSalutation(
             ['salutationUnknown']
@@ -202,7 +202,7 @@ class Widget extends AbstractWidget implements WidgetInterface
      * @gi-id yes-no-fieldset
      * @return FieldsetLayoutInterface
      */
-    protected function createYesNoFieldset()
+    protected function getYesNoFieldset()
     {
         $this->yesNoFieldset = $this->giGetDOMFactory()->createFieldsetLayout(
             $this->giTranslate(GlossaryInterface::class, Glossary::class, 'Yes/No')
@@ -216,7 +216,7 @@ class Widget extends AbstractWidget implements WidgetInterface
      * @return self
      * @throws \Exception
      */
-    protected function createYesNoSwitcher()
+    protected function getYesNoSwitcher()
     {
         $this->yesNoSwitcher = $this->giGetComponentFactory()->getSwitcherFactory()->createYesNo(['yesNo']);
         $this->yesNoSwitcher->getSelection()->selectYes();
@@ -228,7 +228,7 @@ class Widget extends AbstractWidget implements WidgetInterface
      * @gi-id custom-fieldset
      * @return FieldsetLayoutInterface
      */
-    protected function createCustomFieldset()
+    protected function getCustomFieldset()
     {
         $this->customFieldset = $this->giGetDOMFactory()->createFieldsetLayout(
             $this->giTranslate(GlossaryInterface::class, Glossary::class, 'Custom (State)')
@@ -242,7 +242,7 @@ class Widget extends AbstractWidget implements WidgetInterface
      * @return self
      * @throws \Exception
      */
-    protected function createState()
+    protected function getState()
     {
         $this->state = $this->staGetComponentFactory()->createState(['state']);
         $this->state->getSelection()->selectSafe();

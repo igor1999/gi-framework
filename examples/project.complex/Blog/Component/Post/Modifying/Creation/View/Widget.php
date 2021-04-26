@@ -69,14 +69,6 @@ class Widget extends AbstractWidget implements WidgetInterface
     }
 
     /**
-     * @return CaptchaImageTextInterface
-     */
-    public function getCaptchaComponent()
-    {
-        return $this->captchaComponent;
-    }
-
-    /**
      * @return self
      * @throws \Exception
      */
@@ -97,15 +89,16 @@ class Widget extends AbstractWidget implements WidgetInterface
     }
 
     /**
-     * @create
-     * @return self
+     * @return CaptchaImageTextInterface
      */
-    protected function createCaptchaComponent()
+    protected function getCaptchaComponent()
     {
-        $this->captchaComponent = $this->giGetComponentFactory()
-            ->getCaptchaFactory()
-            ->createImageText($this->getViewModel()->getCaptcha());
+        if (!($this->captchaComponent instanceof CaptchaImageTextInterface)) {
+            $this->captchaComponent = $this->giGetComponentFactory()
+                ->getCaptchaFactory()
+                ->createImageText($this->getViewModel()->getCaptcha());
+        }
 
-        return $this;
+        return $this->captchaComponent;
     }
 }

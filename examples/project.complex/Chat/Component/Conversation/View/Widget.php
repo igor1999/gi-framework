@@ -18,7 +18,7 @@ use Chat\Module\DI\GI\SocketDemon\Socket\Server\Context\ContextInterface as Serv
 
 class Widget extends AbstractWidget implements WidgetInterface
 {
-    use ServiceLocatorAwareTrait, ContentsTrait, I18nAwareTrait;
+    use ServiceLocatorAwareTrait, I18nAwareTrait;
 
 
     const CLIENT_CSS = 'chat-conversation';
@@ -47,6 +47,31 @@ class Widget extends AbstractWidget implements WidgetInterface
      * @var ServerSocketContextInterface
      */
     private $serverContext;
+
+    /**
+     * @var LayoutInterface
+     */
+    private $container;
+
+    /**
+     * @var DivInterface
+     */
+    private $board;
+
+    /**
+     * @var DivInterface
+     */
+    private $messageContainer;
+
+    /**
+     * @var TextAreaInterface
+     */
+    private $textbox;
+
+    /**
+     * @var ButtonInterface
+     */
+    private $sendButton;
 
 
     /**
@@ -116,9 +141,11 @@ class Widget extends AbstractWidget implements WidgetInterface
      * @gi-id container
      * @return LayoutInterface
      */
-    protected function createContainer()
+    protected function getContainer()
     {
-        $this->container = $this->giGetDOMFactory()->createLayout();
+        if (!($this->container instanceof LayoutInterface)) {
+            $this->container = $this->giGetDOMFactory()->createLayout();
+        }
 
         return $this->container;
     }
@@ -127,9 +154,11 @@ class Widget extends AbstractWidget implements WidgetInterface
      * @gi-id board
      * @return DivInterface
      */
-    protected function createBoard()
+    protected function getBoard()
     {
-        $this->board = $this->giGetDOMFactory()->createDiv();
+        if (!($this->board instanceof DivInterface)) {
+            $this->board = $this->giGetDOMFactory()->createDiv();
+        }
 
         return $this->board;
     }
@@ -138,9 +167,11 @@ class Widget extends AbstractWidget implements WidgetInterface
      * @gi-id message-container
      * @return DivInterface
      */
-    protected function createMessageContainer()
+    protected function getMessageContainer()
     {
-        $this->messageContainer = $this->giGetDOMFactory()->createDiv();
+        if (!($this->messageContainer instanceof DivInterface)) {
+            $this->messageContainer = $this->giGetDOMFactory()->createDiv();
+        }
 
         return $this->messageContainer;
     }
@@ -149,11 +180,13 @@ class Widget extends AbstractWidget implements WidgetInterface
      * @gi-id textbox
      * @return TextAreaInterface
      */
-    protected function createTextInput()
+    protected function getTextInput()
     {
-        $this->textbox = $this->giGetDOMFactory()->createTextArea();
+        if (!($this->textbox instanceof TextAreaInterface)) {
+            $this->textbox = $this->giGetDOMFactory()->createTextArea();
 
-        $this->textbox->getAttributes()->setPlaceholder($this->translate('your message'));
+            $this->textbox->getAttributes()->setPlaceholder($this->translate('your message'));
+        }
 
         return $this->textbox;
     }
@@ -162,13 +195,15 @@ class Widget extends AbstractWidget implements WidgetInterface
      * @gi-id send-button
      * @return ButtonInterface
      */
-    protected function createSubmitButton()
+    protected function getSubmitButton()
     {
-        $this->sendButton = $this->giGetDOMFactory()->getInputFactory()->createButton(
-            [], $this->translate('send!')
-        );
+        if (!($this->sendButton instanceof ButtonInterface)) {
+            $this->sendButton = $this->giGetDOMFactory()->getInputFactory()->createButton(
+                [], $this->translate('send!')
+            );
 
-        $this->sendButton->getAttributes()->setDisabled(true);
+            $this->sendButton->getAttributes()->setDisabled(true);
+        }
 
         return $this->sendButton;
     }

@@ -103,14 +103,6 @@ class Widget extends AbstractWidget implements WidgetInterface
     }
 
     /**
-     * @return ButtonInterface
-     */
-    public function getDeleteButton()
-    {
-        return $this->deleteButton;
-    }
-
-    /**
      * @return self
      * @throws \Exception
      */
@@ -142,11 +134,13 @@ class Widget extends AbstractWidget implements WidgetInterface
      * @return ButtonInterface
      * @throws \Exception
      */
-    protected function createDeleteButton()
+    protected function getDeleteButton()
     {
-        $this->deleteButton = $this->giGetDOMFactory()->getInputFactory()->createButton(
-            [], $this->translate('delete!')
-        );
+        if (!($this->deleteButton instanceof ButtonInterface)) {
+            $this->deleteButton = $this->giGetDOMFactory()->getInputFactory()->createButton(
+                [], $this->translate('delete!')
+            );
+        }
 
         return $this->deleteButton;
     }

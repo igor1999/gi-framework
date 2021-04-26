@@ -12,7 +12,7 @@ use GI\DOM\HTML\Element\Input\Button\ButtonInterface;
 
 class Widget extends AbstractWidget implements WidgetInterface
 {
-    use ServiceLocatorAwareTrait, ContentsTrait;
+    use ServiceLocatorAwareTrait;
 
 
     const CLIENT_CSS = 'job-process';
@@ -23,6 +23,22 @@ class Widget extends AbstractWidget implements WidgetInterface
     const SERVER_DATA_START = 'start-url';
 
     const SERVER_DATA_CHECK = 'check-url';
+
+
+    /**
+     * @var LayoutInterface
+     */
+    private $container;
+
+    /**
+     * @var ProgressInterface
+     */
+    private $progressBar;
+
+    /**
+     * @var ButtonInterface
+     */
+    private $startButton;
 
 
     /**
@@ -75,9 +91,11 @@ class Widget extends AbstractWidget implements WidgetInterface
      * @return LayoutInterface
      * @throws \Exception
      */
-    protected function createContainer()
+    protected function getContainer()
     {
-        $this->container = $this->giGetDOMFactory()->createLayout();
+        if (!($this->container instanceof LayoutInterface)) {
+            $this->container = $this->giGetDOMFactory()->createLayout();
+        }
 
         return $this->container;
     }
@@ -87,11 +105,13 @@ class Widget extends AbstractWidget implements WidgetInterface
      * @return ProgressInterface
      * @throws \Exception
      */
-    protected function createProgressBar()
+    protected function getProgressBar()
     {
-        $this->progressBar = $this->giGetDOMFactory()->createProgress();
+        if (!($this->progressBar instanceof ProgressInterface)) {
+            $this->progressBar = $this->giGetDOMFactory()->createProgress();
 
-        $this->progressBar->setMax(100)->setValue(0);
+            $this->progressBar->setMax(100)->setValue(0);
+        }
 
         return $this->progressBar;
     }
@@ -100,9 +120,11 @@ class Widget extends AbstractWidget implements WidgetInterface
      * @gi-id start-button
      * @return ButtonInterface
      */
-    protected function createStartButton()
+    protected function getStartButton()
     {
-        $this->startButton = $this->giGetDOMFactory()->getInputFactory()->createButton([], 'start!');
+        if (!($this->startButton instanceof ButtonInterface)) {
+            $this->startButton = $this->giGetDOMFactory()->getInputFactory()->createButton([], 'start!');
+        }
 
         return $this->startButton;
     }

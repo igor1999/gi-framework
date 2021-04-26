@@ -15,13 +15,34 @@ use GI\DOM\HTML\Element\TextArea\TextAreaInterface;
 
 abstract class AbstractWidget extends Base implements WidgetInterface
 {
-    use ServiceLocatorAwareTrait, ContentsTrait, I18nAwareTrait;
+    use ServiceLocatorAwareTrait, I18nAwareTrait;
 
 
     const CLIENT_CSS = 'blog-comment-modifying-base';
 
 
     const SERVER_DATA_SUCCESS_MESSAGE = 'success-message';
+
+
+    /**
+     * @var FormLayoutInterface
+     */
+    private $form;
+
+    /**
+     * @var TextAreaInterface
+     */
+    private $textInput;
+
+    /**
+     * @var SubmitInterface
+     */
+    private $submitButton;
+
+    /**
+     * @var DivInterface
+     */
+    private $resultMessageContainer;
 
 
     /**
@@ -46,9 +67,11 @@ abstract class AbstractWidget extends Base implements WidgetInterface
      * @gi-id form
      * @return FormLayoutInterface
      */
-    protected function createForm()
+    protected function getForm()
     {
-        $this->form = $this->giGetDOMFactory()->createFormLayout()->setMethodToPost();
+        if (!($this->form instanceof FormLayoutInterface)) {
+            $this->form = $this->giGetDOMFactory()->createFormLayout()->setMethodToPost();
+        }
 
         return $this->form;
     }
@@ -57,13 +80,15 @@ abstract class AbstractWidget extends Base implements WidgetInterface
      * @gi-id text-input
      * @return TextAreaInterface
      */
-    protected function createTextInput()
+    protected function getTextInput()
     {
-        $this->textInput = $this->giGetDOMFactory()->createTextArea(
-            $this->getViewModel()->getTextName(), $this->getViewModel()->getText()
-        );
+        if (!($this->textInput instanceof TextAreaInterface)) {
+            $this->textInput = $this->giGetDOMFactory()->createTextArea(
+                $this->getViewModel()->getTextName(), $this->getViewModel()->getText()
+            );
 
-        $this->textInput->getAttributes()->setPlaceholder($this->translate('text'));
+            $this->textInput->getAttributes()->setPlaceholder($this->translate('text'));
+        }
 
         return $this->textInput;
     }
@@ -72,11 +97,13 @@ abstract class AbstractWidget extends Base implements WidgetInterface
      * @gi-id submit-button
      * @return SubmitInterface
      */
-    protected function createSubmitButton()
+    protected function getSubmitButton()
     {
-        $this->submitButton = $this->giGetDOMFactory()->getInputFactory()->createSubmit(
-            [], $this->translate('save!')
-        );
+        if (!($this->submitButton instanceof SubmitInterface)) {
+            $this->submitButton = $this->giGetDOMFactory()->getInputFactory()->createSubmit(
+                [], $this->translate('save!')
+            );
+        }
 
         return $this->submitButton;
     }
@@ -85,9 +112,11 @@ abstract class AbstractWidget extends Base implements WidgetInterface
      * @gi-id result-message-container
      * @return DivInterface
      */
-    protected function createResultMessageContainer()
+    protected function getResultMessageContainer()
     {
-        $this->resultMessageContainer = $this->giGetDOMFactory()->createDiv();
+        if (!($this->resultMessageContainer instanceof DivInterface)) {
+            $this->resultMessageContainer = $this->giGetDOMFactory()->createDiv();
+        }
 
         return $this->resultMessageContainer;
     }

@@ -12,7 +12,7 @@ use GI\DOM\HTML\Element\Input\Button\ButtonInterface;
 
 class Widget extends Base implements WidgetInterface
 {
-    use ServiceLocatorAwareTrait, ContentsTrait, I18nAwareTrait;
+    use ServiceLocatorAwareTrait, I18nAwareTrait;
 
 
     const CLIENT_JS  = 'blog-comment-modifying-removing';
@@ -29,6 +29,21 @@ class Widget extends Base implements WidgetInterface
      * @var ResourceRendererInterface
      */
     private $resourceRenderer;
+
+    /**
+     * @var int
+     */
+    private $id;
+
+    /**
+     * @var LayoutInterface
+     */
+    private $container;
+
+    /**
+     * @var ButtonInterface
+     */
+    private $deleteButton;
 
 
     /**
@@ -48,6 +63,25 @@ class Widget extends Base implements WidgetInterface
     protected function getResourceRenderer()
     {
         return $this->resourceRenderer;
+    }
+
+    /**
+     * @return int
+     */
+    protected function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     * @return self
+     */
+    public function setId(int $id)
+    {
+        $this->id = $id;
+
+        return $this;
     }
 
     /**
@@ -73,9 +107,11 @@ class Widget extends Base implements WidgetInterface
      * @gi-id container
      * @return LayoutInterface
      */
-    protected function createContainer()
+    protected function getContainer()
     {
-        $this->container = $this->giGetDOMFactory()->createLayout();
+        if (!($this->container instanceof LayoutInterface)) {
+            $this->container = $this->giGetDOMFactory()->createLayout();
+        }
 
         return $this->container;
     }
@@ -85,11 +121,13 @@ class Widget extends Base implements WidgetInterface
      * @return ButtonInterface
      * @throws \Exception
      */
-    protected function createDeleteButton()
+    protected function getDeleteButton()
     {
-        $this->deleteButton = $this->giGetDOMFactory()->getInputFactory()->createButton(
-            [], $this->translate('delete!')
-        );
+        if (!($this->deleteButton instanceof ButtonInterface)) {
+            $this->deleteButton = $this->giGetDOMFactory()->getInputFactory()->createButton(
+                [], $this->translate('delete!')
+            );
+        }
 
         return $this->deleteButton;
     }

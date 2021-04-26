@@ -76,38 +76,32 @@ class Widget extends AbstractWidget implements WidgetInterface
     }
 
     /**
-     * @return TableInterface
-     */
-    public function getTable()
-    {
-        return $this->table;
-    }
-
-    /**
      * @render
      * @gi-id table
      * @return TableInterface
      * @throws \Exception
      */
-    protected function createTable()
+    protected function getTable()
     {
-        $this->table = $this->giGetDOMFactory()->createTable();
+        if (!($this->table instanceof TableInterface)) {
+            $this->table = $this->giGetDOMFactory()->createTable();
 
-        $this->table->build(count($this->numbers), 2, true);
+            $this->table->build(count($this->numbers), 2, true);
 
-        $positionTitle = $this->giTranslate(GlossaryInterface::class, Glossary::class, 'Position');
-        $numberTitle   = $this->giTranslate(GlossaryInterface::class, Glossary::class, 'Number');
-        $this->table
-            ->set(0,0, $positionTitle)
-            ->set(0,1, $numberTitle);
-
-        $rowIndex = 1;
-        foreach ($this->numbers as $index => $number) {
+            $positionTitle = $this->giTranslate(GlossaryInterface::class, Glossary::class, 'Position');
+            $numberTitle   = $this->giTranslate(GlossaryInterface::class, Glossary::class, 'Number');
             $this->table
-                ->set($rowIndex, 0, $index + 1)
-                ->set($rowIndex, 1, $number);
+                ->set(0,0, $positionTitle)
+                ->set(0,1, $numberTitle);
 
-            $rowIndex += 1;
+            $rowIndex = 1;
+            foreach ($this->numbers as $index => $number) {
+                $this->table
+                    ->set($rowIndex, 0, $index + 1)
+                    ->set($rowIndex, 1, $number);
+
+                $rowIndex += 1;
+            }
         }
 
         return $this->table;
