@@ -14,28 +14,12 @@ class LoginAutocomplete extends AbstractAutocomplete implements LoginAutocomplet
 
 
     /**
-     * @var ContextInterface
-     */
-    private $context;
-
-
-    /**
      * @return ContextInterface
-     */
-    protected function getContext()
-    {
-        return $this->context;
-    }
-
-    /**
-     * @return self
      * @throws \Exception
      */
     protected function createContext()
     {
-        $this->context = $this->giGetDi(ContextInterface::class, Context::class);
-
-        return $this;
+        return $this->giGetDi(ContextInterface::class, Context::class);
     }
 
     /**
