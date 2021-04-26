@@ -89,6 +89,7 @@ class Widget extends AbstractWidget implements WidgetInterface
     }
 
     /**
+     * @create
      * @return CaptchaImageTextInterface
      */
     protected function getCaptchaComponent()
