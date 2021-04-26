@@ -9,6 +9,11 @@ use STA\ServiceLocator\ServiceLocatorAwareTrait;
 
 use GI\DOM\HTML\Element\Form\Layouts\Fieldset\FieldsetInterface as FieldsetLayoutInterface;
 use STA\Component\Switchers\I18n\GlossaryInterface;
+use GI\Component\Switcher\Gender\GenderInterface;
+use GI\Component\Switcher\OnOff\OnOffInterface;
+use GI\Component\Switcher\Salutation\SalutationInterface;
+use GI\Component\Switcher\YesNo\YesNoInterface;
+use STA\Component\Switchers\State\StateInterface;
 
 class Widget extends AbstractWidget implements WidgetInterface
 {
@@ -83,9 +88,11 @@ class Widget extends AbstractWidget implements WidgetInterface
      */
     protected function getMainFieldset()
     {
-        $this->mainFieldset = $this->giGetDOMFactory()->createFieldsetLayout(
-            $this->giTranslate(GlossaryInterface::class, Glossary::class, 'Switchers')
-        );
+        if (!($this->mainFieldset instanceof FieldsetLayoutInterface)) {
+            $this->mainFieldset = $this->giGetDOMFactory()->createFieldsetLayout(
+                $this->giTranslate(GlossaryInterface::class, Glossary::class, 'Switchers')
+            );
+        }
 
         return $this->mainFieldset;
     }
@@ -96,37 +103,43 @@ class Widget extends AbstractWidget implements WidgetInterface
      */
     protected function getGenderFieldset()
     {
-        $this->genderFieldset = $this->giGetDOMFactory()->createFieldsetLayout(
-            $this->giTranslate(GlossaryInterface::class, Glossary::class, 'Gender')
-        );
+        if (!($this->genderFieldset instanceof FieldsetLayoutInterface)) {
+            $this->genderFieldset = $this->giGetDOMFactory()->createFieldsetLayout(
+                $this->giTranslate(GlossaryInterface::class, Glossary::class, 'Gender')
+            );
+        }
 
         return $this->genderFieldset;
     }
 
     /**
      * @create
-     * @return self
+     * @return GenderInterface
      * @throws \Exception
      */
     protected function getGender2Switcher()
     {
-        $this->gender2Switcher = $this->giGetComponentFactory()->getSwitcherFactory()->createGender(['gender2']);
-        $this->gender2Switcher->getSelection()->selectMale();
+        if (!($this->gender2Switcher instanceof FieldsetLayoutInterface)) {
+            $this->gender2Switcher = $this->giGetComponentFactory()->getSwitcherFactory()->createGender(['gender2']);
+            $this->gender2Switcher->getSelection()->selectMale();
+        }
 
-        return $this;
+        return $this->gender2Switcher;
     }
 
     /**
      * @create
-     * @return self
+     * @return GenderInterface
      * @throws \Exception
      */
     protected function getGender3Switcher()
     {
-        $this->gender3Switcher = $this->giGetComponentFactory()->getSwitcherFactory()->createGender(['gender3']);
-        $this->gender3Switcher->getSelection()->addOthers()->selectOthers();
+        if (!($this->gender3Switcher instanceof GenderInterface)) {
+            $this->gender3Switcher = $this->giGetComponentFactory()->getSwitcherFactory()->createGender(['gender3']);
+            $this->gender3Switcher->getSelection()->addOthers()->selectOthers();
+        }
 
-        return $this;
+        return $this->gender3Switcher;
     }
 
     /**
@@ -135,24 +148,28 @@ class Widget extends AbstractWidget implements WidgetInterface
      */
     protected function getOnOffFieldset()
     {
-        $this->onOffFieldset = $this->giGetDOMFactory()->createFieldsetLayout(
-            $this->giTranslate(GlossaryInterface::class, Glossary::class, 'On/Off')
-        );
+        if (!($this->onOffFieldset instanceof FieldsetLayoutInterface)) {
+            $this->onOffFieldset = $this->giGetDOMFactory()->createFieldsetLayout(
+                $this->giTranslate(GlossaryInterface::class, Glossary::class, 'On/Off')
+            );
+        }
 
         return $this->onOffFieldset;
     }
 
     /**
      * @create
-     * @return self
+     * @return OnOffInterface
      * @throws \Exception
      */
     protected function getOnOffSwitcher()
     {
-        $this->onOffSwitcher = $this->giGetComponentFactory()->getSwitcherFactory()->createOnOff(['onOff']);
-        $this->onOffSwitcher->getSelection()->selectOn();
+        if (!($this->onOffSwitcher instanceof OnOffInterface)) {
+            $this->onOffSwitcher = $this->giGetComponentFactory()->getSwitcherFactory()->createOnOff(['onOff']);
+            $this->onOffSwitcher->getSelection()->selectOn();
+        }
 
-        return $this;
+        return $this->onOffSwitcher;
     }
 
     /**
@@ -161,41 +178,47 @@ class Widget extends AbstractWidget implements WidgetInterface
      */
     protected function getSalutationFieldset()
     {
-        $this->salutationFieldset = $this->giGetDOMFactory()->createFieldsetLayout(
-            $this->giTranslate(GlossaryInterface::class, Glossary::class, 'Salutation')
-        );
+        if (!($this->salutationFieldset instanceof FieldsetLayoutInterface)) {
+            $this->salutationFieldset = $this->giGetDOMFactory()->createFieldsetLayout(
+                $this->giTranslate(GlossaryInterface::class, Glossary::class, 'Salutation')
+            );
+        }
 
         return $this->salutationFieldset;
     }
 
     /**
      * @create
-     * @return self
+     * @return SalutationInterface
      * @throws \Exception
      */
     protected function getSalutationSwitcher()
     {
-        $this->salutationSwitcher = $this->giGetComponentFactory()->getSwitcherFactory()->createSalutation(
-            ['salutation']
-        );
-        $this->salutationSwitcher->getSelection()->selectMr();
+        if (!($this->salutationSwitcher instanceof SalutationInterface)) {
+            $this->salutationSwitcher = $this->giGetComponentFactory()->getSwitcherFactory()->createSalutation(
+                ['salutation']
+            );
+            $this->salutationSwitcher->getSelection()->selectMr();
+        }
 
-        return $this;
+        return $this->salutationSwitcher;
     }
 
     /**
      * @create
-     * @return self
+     * @return SalutationInterface
      * @throws \Exception
      */
     protected function getSalutationUnknownSwitcher()
     {
-        $this->salutationUnknownSwitcher = $this->giGetComponentFactory()->getSwitcherFactory()->createSalutation(
-            ['salutationUnknown']
-        );
-        $this->salutationUnknownSwitcher->getSelection()->addUnknown()->selectUnknown();
+        if (!($this->salutationUnknownSwitcher instanceof SalutationInterface)) {
+            $this->salutationUnknownSwitcher = $this->giGetComponentFactory()->getSwitcherFactory()->createSalutation(
+                ['salutationUnknown']
+            );
+            $this->salutationUnknownSwitcher->getSelection()->addUnknown()->selectUnknown();
+        }
 
-        return $this;
+        return $this->salutationUnknownSwitcher;
     }
 
     /**
@@ -204,24 +227,28 @@ class Widget extends AbstractWidget implements WidgetInterface
      */
     protected function getYesNoFieldset()
     {
-        $this->yesNoFieldset = $this->giGetDOMFactory()->createFieldsetLayout(
-            $this->giTranslate(GlossaryInterface::class, Glossary::class, 'Yes/No')
-        );
+        if (!($this->yesNoFieldset instanceof FieldsetLayoutInterface)) {
+            $this->yesNoFieldset = $this->giGetDOMFactory()->createFieldsetLayout(
+                $this->giTranslate(GlossaryInterface::class, Glossary::class, 'Yes/No')
+            );
+        }
 
         return $this->yesNoFieldset;
     }
 
     /**
      * @create
-     * @return self
+     * @return YesNoInterface
      * @throws \Exception
      */
     protected function getYesNoSwitcher()
     {
-        $this->yesNoSwitcher = $this->giGetComponentFactory()->getSwitcherFactory()->createYesNo(['yesNo']);
-        $this->yesNoSwitcher->getSelection()->selectYes();
+        if (!($this->yesNoSwitcher instanceof YesNoInterface)) {
+            $this->yesNoSwitcher = $this->giGetComponentFactory()->getSwitcherFactory()->createYesNo(['yesNo']);
+            $this->yesNoSwitcher->getSelection()->selectYes();
+        }
 
-        return $this;
+        return $this->yesNoSwitcher;
     }
 
     /**
@@ -230,23 +257,27 @@ class Widget extends AbstractWidget implements WidgetInterface
      */
     protected function getCustomFieldset()
     {
-        $this->customFieldset = $this->giGetDOMFactory()->createFieldsetLayout(
-            $this->giTranslate(GlossaryInterface::class, Glossary::class, 'Custom (State)')
-        );
+        if (!($this->customFieldset instanceof FieldsetLayoutInterface)) {
+            $this->customFieldset = $this->giGetDOMFactory()->createFieldsetLayout(
+                $this->giTranslate(GlossaryInterface::class, Glossary::class, 'Custom (State)')
+            );
+        }
 
         return $this->customFieldset;
     }
 
     /**
      * @create
-     * @return self
+     * @return StateInterface
      * @throws \Exception
      */
     protected function getState()
     {
-        $this->state = $this->staGetComponentFactory()->createState(['state']);
-        $this->state->getSelection()->selectSafe();
+        if (!($this->state instanceof StateInterface)) {
+            $this->state = $this->staGetComponentFactory()->createState(['state']);
+            $this->state->getSelection()->selectSafe();
+        }
 
-        return $this;
+        return $this->state;
     }
 }
