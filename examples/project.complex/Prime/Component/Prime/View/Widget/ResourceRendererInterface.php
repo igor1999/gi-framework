@@ -2,9 +2,9 @@
 
 namespace Prime\Component\Prime\View\Widget;
 
-use Core\View\ResourceRendererInterface as BaseInterface;
+use GI\Component\Table\View\Widget\ResourceRendererInterface as TableResourceRendererInterface;
 
-interface ResourceRendererInterface extends BaseInterface
+interface ResourceRendererInterface extends TableResourceRendererInterface
 {
 
 }

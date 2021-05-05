@@ -2,7 +2,8 @@
 
 namespace Prime\Component\Prime\View\Widget;
 
-use Core\View\AbstractResourceRenderer as Base;
+use GI\Component\Table\View\Widget\AbstractResourceRenderer as Base;
+use Core\View\AbstractResourceRenderer as CoreResourceRenderer;
 
 use Prime\ServiceLocator\ServiceLocatorAwareTrait;
 
@@ -27,6 +28,6 @@ class ResourceRenderer extends Base implements ResourceRendererInterface
     {
         parent::__construct();
 
-        $this->createClassContents(self::class);
+        $this->createClassContents(CoreResourceRenderer::class)->createClassContents(self::class);
     }
 }

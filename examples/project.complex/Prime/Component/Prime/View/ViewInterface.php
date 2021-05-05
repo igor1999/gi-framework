@@ -2,7 +2,7 @@
 
 namespace Prime\Component\Prime\View;
 
-use GI\Component\Base\View\ViewInterface as BaseInterface;
+use GI\Component\Table\View\ViewInterface as BaseInterface;
 use GI\Component\Paging\Base\PagingInterface;
 use Prime\Component\Prime\View\Widget\WidgetInterface;
 

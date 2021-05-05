@@ -2,13 +2,16 @@
 
 namespace Prime\Component\Prime\View\Widget;
 
-use GI\Component\Base\View\Widget\WidgetInterface as BaseInterface;
+use GI\Component\Table\View\Widget\WidgetInterface as BaseInterface;
 
+/**
+ * Interface WidgetInterface
+ * @package Prime\Component\Prime\View\Widget
+ *
+ * @method array getNumbers()
+ * @method WidgetInterface setNumbers(array $numbers)
+ */
 interface WidgetInterface extends BaseInterface
 {
-    /**
-     * @param array $numbers
-     * @return self
-     */
-    public function setNumbers(array $numbers);
+
 }

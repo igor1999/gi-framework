@@ -2,7 +2,7 @@
 
 namespace Prime\Component\Prime\View;
 
-use GI\Component\Base\View\AbstractView as Base;
+use GI\Component\Table\View\AbstractView as Base;
 use Prime\Component\Prime\View\Widget\Widget;
 
 use Prime\ServiceLocator\ServiceLocatorAwareTrait;
