@@ -2,7 +2,7 @@
 
 namespace Prime\Component\Prime;
 
-use GI\Component\Base\AbstractComponent;
+use GI\Component\Table\TableWithPaging\AbstractTable;
 use Prime\Component\Prime\Context\Context;
 use Prime\Component\Prime\View\View;
 use Prime\Component\Prime\Model\PrimeGen;
@@ -15,7 +15,7 @@ use Prime\Component\Prime\View\ViewInterface;
 use Prime\Module\Call\Route\Tree\TreeInterface;
 use Prime\Component\Prime\Model\PrimeGenInterface;
 
-class Prime extends AbstractComponent implements PrimeInterface
+class Prime extends AbstractTable implements PrimeInterface
 {
     use ServiceLocatorAwareTrait;
 
@@ -44,14 +44,11 @@ class Prime extends AbstractComponent implements PrimeInterface
      */
     public function __construct(string $type, array $pagingContents)
     {
+        parent::__construct($pagingContents);
+
         $this->view = $this->giGetDi(ViewInterface::class, View::class);
 
-        /** @var ContextInterface $context */
-        $context = $this->giGetDi(ContextInterface::class, Context::class);
-
-        $this->paging = $this->createPaging($type)->hydrate($pagingContents, $context->getEntriesTotal());
-
-        $this->primeGenerator = $this->giGetDi(PrimeGenInterface::class, PrimeGen::class);
+        $this->paging = $this->createPaging($type)->hydrate($pagingContents, $this->getTotal());
     }
 
     /**
@@ -90,7 +87,7 @@ class Prime extends AbstractComponent implements PrimeInterface
     /**
      * @return ViewInterface
      */
-    public function getView()
+    protected function getView()
     {
         return $this->view;
     }
@@ -98,33 +95,46 @@ class Prime extends AbstractComponent implements PrimeInterface
     /**
      * @return PagingInterface
      */
-    public function getPaging()
+    protected function getPaging()
     {
         return $this->paging;
     }
 
     /**
-     * @return PrimeGenInterface
+     * @return int
+     * @throws \Exception
      */
-    public function getPrimeGenerator()
+    protected function getTotal()
     {
+        /** @var ContextInterface $context */
+        $context = $this->giGetDi(ContextInterface::class, Context::class);
+
+        return $context->getEntriesTotal();
+    }
+
+    /**
+     * @return PrimeGenInterface
+     * @throws \Exception
+     */
+    protected function getPrimeGenerator()
+    {
+        if (!($this->primeGenerator instanceof PrimeGenInterface)) {
+            $this->primeGenerator = $this->giGetDi(PrimeGenInterface::class, PrimeGen::class);
+        }
+
         return $this->primeGenerator;
     }
 
     /**
-     * @return string
+     * @return array
      * @throws \Exception
      */
-    public function toString()
+    protected function getDataSource()
     {
-        $model = $this->getPaging()->getPagingModel();
+        $pagingModel = $this->getPaging()->getPagingModel();
 
-        $numbers = $this->getPrimeGenerator()
-            ->create($model->getEntriesTotal())
-            ->slice($model->getFirstShowedEntry(), $model->getLastShowedEntry());
-
-        $this->getView()->setPaging($this->getPaging())->getWidget()->setNumbers($numbers);
-
-        return $this->getView()->toString();
+        return $this->getPrimeGenerator()
+            ->create($pagingModel->getEntriesTotal())
+            ->slice($pagingModel->getFirstShowedEntry(), $pagingModel->getLastShowedEntry());
     }
 }
