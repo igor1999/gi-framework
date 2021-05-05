@@ -1,6 +1,6 @@
 <?php
 
-namespace Prime\Component\Prime\View\Widget\DOM\PrimeNumber\Header;
+namespace Prime\Component\Prime\View\Widget\Template\DOM\PrimeNumber\Header;
 
 use GI\DOM\HTML\Element\Table\Cell\TH\TH;
 use Prime\Component\Prime\I18n\Glossary;
