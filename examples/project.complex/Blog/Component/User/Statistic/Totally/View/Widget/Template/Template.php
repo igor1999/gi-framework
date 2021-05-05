@@ -27,13 +27,13 @@ class Template extends AbstractCollection implements TemplateInterface
     public function __construct()
     {
         $this->set('position', HeaderNumber::class, BodyNumber::class)
-            ->set('login',LoginBody::class, LoginHeader::class)
-            ->set('posts',PostsBody::class, PostsHeader::class)
-            ->set('comments',CommentsBody::class, CommentsHeader::class)
+            ->set('login', LoginHeader::class,LoginBody::class)
+            ->set('posts', PostsHeader::class,PostsBody::class)
+            ->set('comments', CommentsHeader::class,CommentsBody::class)
             ->set(
                 'received-comments',
-                ReceivedCommentsBody::class,
-                ReceivedCommentsHeader::class
+                ReceivedCommentsHeader::class,
+                ReceivedCommentsBody::class
             );
     }
 }
