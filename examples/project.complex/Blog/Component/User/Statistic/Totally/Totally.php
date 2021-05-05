@@ -31,6 +31,8 @@ class Totally extends AbstractTable implements TotallyInterface
         parent::__construct($contents);
 
         $this->view = $this->giGetDi(ViewInterface::class, View::class);
+
+        $this->getViewModel()->getOrder()->setCriteriaIfEmpty('login');
     }
 
     /**
