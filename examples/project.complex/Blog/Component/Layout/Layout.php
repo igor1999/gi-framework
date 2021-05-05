@@ -17,7 +17,7 @@ use Blog\Component\Post\Modifying\Edition\EditionInterface as PostEditionInterfa
 use Blog\Component\Comment\Usecase\Creation\CreationInterface as CommentCreationInterface;
 use Blog\Component\Comment\Usecase\Removing\RemovingInterface as CommentRemovingInterface;
 use Blog\Component\User\Statistic\Single\Usecase\SingleInterface as StatisticSingleInterface;
-use Blog\Component\User\Statistic\Totally\Usecase\TotallyInterface as StatisticTotallyInterface;
+use Blog\Component\User\Statistic\Totally\TotallyInterface as StatisticTotallyInterface;
 
 class Layout extends AbstractLayout implements LayoutInterface
 {
