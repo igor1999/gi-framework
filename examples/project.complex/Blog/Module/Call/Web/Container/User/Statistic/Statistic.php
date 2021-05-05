@@ -10,7 +10,7 @@ use Blog\ServiceLocator\ServiceLocatorAwareTrait;
 use Blog\Module\Call\Web\BaseCallInterface;
 
 use Blog\Component\User\Statistic\Single\Usecase\Gate\Gate as SingleGate;
-use Blog\Component\User\Statistic\Totally\Usecase\Gate\Gate as TotallyGate;
+use Blog\Component\User\Statistic\Totally\Gate\Gate as TotallyGate;
 
 class Statistic extends Base implements StatisticInterface
 {
