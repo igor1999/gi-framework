@@ -1,20 +1,20 @@
 <?php
 
-namespace Prime\Component\Prime\View\Widget;
+namespace Blog\Component\User\Statistic\Totally\View\Widget;
 
 use GI\Component\Table\View\Widget\AbstractWidget as Base;
-use Prime\Component\Prime\View\Widget\Template\Template;
+use Blog\Component\User\Statistic\Totally\View\Widget\Template\Template;
 
-use Prime\ServiceLocator\ServiceLocatorAwareTrait;
+use Blog\ServiceLocator\ServiceLocatorAwareTrait;
 
-use Prime\Component\Prime\View\Widget\Template\TemplateInterface;
+use Blog\Component\User\Statistic\Totally\View\Widget\Template\TemplateInterface;
 
 class Widget extends Base implements WidgetInterface
 {
     use ServiceLocatorAwareTrait;
 
 
-    const CLIENT_CSS = 'prime-prime-widget';
+    const CLIENT_CSS = 'blog-user-statistic-totally-widget';
 
 
     /**
