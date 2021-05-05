@@ -8,3 +8,11 @@ table[data-gi-css~=prime-prime-widget][data-gi-id=table] tr:nth-child(odd) {}
 table[data-gi-css~=prime-prime-widget][data-gi-id=table] tr > td  {
     background-color: white; padding: 5px;
 }
+
+table[data-gi-css~=prime-prime-widget][data-gi-id=table] tr > th  {
+    font-size: 11px;
+}
+
+table[data-gi-css~=prime-prime-widget][data-gi-id=table] tr > th:nth-child(2)  {
+    width: 70px;
+}
