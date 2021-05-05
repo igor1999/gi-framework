@@ -1,0 +1,15 @@
+<?php
+    /** @noinspection PhpUnhandledExceptionInspection */
+
+    use Blog\Component\User\Statistic\Totally\View\ViewInterface;
+    /** @var ViewInterface $this */
+
+    echo $this->getResourceRenderer()->toString();
+?>
+
+<div data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>" data-gi-id="title">
+    <?php echo $this->translate('Activity of users totally'); ?>
+</div>
+<div data-gi-css="<?php echo $this->getClientCSS()->toString(); ?>" data-gi-id="table">
+    <?php echo $this->getWidget()->toString(); ?>
+</div>
