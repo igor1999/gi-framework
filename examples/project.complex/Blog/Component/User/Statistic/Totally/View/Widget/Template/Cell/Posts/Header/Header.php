@@ -2,7 +2,7 @@
 
 namespace Blog\Component\User\Statistic\Totally\View\Widget\Template\Cell\Posts\Header;
 
-use GI\Component\Table\View\Widget\DOM\Header\Ordered\AbstractOrdered;
+use GI\Component\Table\View\Widget\Template\Cell\Header\Ordered\AbstractOrdered;
 
 use Blog\ServiceLocator\ServiceLocatorAwareTrait;
 use Blog\Component\User\I18n\I18nAwareTrait;

@@ -2,7 +2,7 @@
 
 namespace Blog\Component\User\Statistic\Totally\View\Widget\Template\Cell\Login\Header;
 
-use GI\Component\Table\View\Widget\DOM\Header\Ordered\OrderedInterface;
+use GI\Component\Table\View\Widget\Template\Cell\Header\Ordered\OrderedInterface;
 
 interface HeaderInterface extends OrderedInterface
 {

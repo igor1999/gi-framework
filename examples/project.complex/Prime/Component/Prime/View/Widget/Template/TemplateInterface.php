@@ -2,9 +2,9 @@
 
 namespace Prime\Component\Prime\View\Widget\Template;
 
-use GI\Component\Table\View\Widget\Template\Collection\CollectionInterface;
+use GI\Component\Table\View\Widget\Template\TemplateInterface as BaseInterface;
 
-interface TemplateInterface extends CollectionInterface
+interface TemplateInterface extends BaseInterface
 {
 
 }

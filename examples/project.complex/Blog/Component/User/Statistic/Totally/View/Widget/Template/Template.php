@@ -2,9 +2,9 @@
 
 namespace Blog\Component\User\Statistic\Totally\View\Widget\Template;
 
-use GI\Component\Table\View\Widget\Template\Collection\AbstractCollection;
-use GI\Component\Table\View\Widget\DOM\Header\Number\Number as HeaderNumber;
-use GI\Component\Table\View\Widget\DOM\Body\Number\Number as BodyNumber;
+use GI\Component\Table\View\Widget\Template\AbstractTemplate;
+use GI\Component\Table\View\Widget\Template\Cell\Header\Number\Number as HeaderNumber;
+use GI\Component\Table\View\Widget\Template\Cell\Body\Number\Number as BodyNumber;
 use Blog\Component\User\Statistic\Totally\View\Widget\Template\Cell\Login\Body\Body as LoginBody;
 use Blog\Component\User\Statistic\Totally\View\Widget\Template\Cell\Login\Header\Header as LoginHeader;
 use Blog\Component\User\Statistic\Totally\View\Widget\Template\Cell\Posts\Body\Body as PostsBody;
@@ -16,13 +16,14 @@ use Blog\Component\User\Statistic\Totally\View\Widget\Template\Cell\ReceivedComm
 
 use Blog\ServiceLocator\ServiceLocatorAwareTrait;
 
-class Template extends AbstractCollection implements TemplateInterface
+class Template extends AbstractTemplate implements TemplateInterface
 {
     use ServiceLocatorAwareTrait;
 
 
     /**
      * Template constructor.
+     * @throws \Exception
      */
     public function __construct()
     {
