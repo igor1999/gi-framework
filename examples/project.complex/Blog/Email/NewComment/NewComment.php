@@ -12,7 +12,7 @@ use Blog\ServiceLocator\ServiceLocatorAwareTrait;
 use Blog\RDB\ORM\Comment\RecordInterface;
 use Blog\Email\Context\ContextInterface as GlobalContextInterface;
 use Blog\Email\NewComment\I18n\GlossaryInterface;
-use GI\Util\TextProcessing\TextProcessor\MarkupTextProcessorInterface;
+use GI\Util\TextProcessing\MarkupTextProcessor\MarkupTextProcessorInterface;
 
 class NewComment extends AbstractController implements NewCommentInterface
 {
@@ -118,10 +118,8 @@ class NewComment extends AbstractController implements NewCommentInterface
      */
     protected function getSubject()
     {
-        $title = $this->getTextProcessor()->cutAndEscapeString(
-            $this->getRecord()->getPost()->getTitle(),
-            static::DEFAULT_TITLE_LENGTH
-        );
+        $title = $this->getRecord()->getPost()->getTitle();
+        $title = $this->getTextProcessor()->setText($title)->cutAsString(static::DEFAULT_TITLE_LENGTH)->getText();
 
         return sprintf($this->translate(static::TITLE_TEMPLATE), $title);
     }
